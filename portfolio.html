@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ritika Agarwal — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f1f3;--surface:#fff;--ink:#221a24;--ink-muted:#6b5f6e;--ink-faint:#b8aebb;--accent:#7a4f6d;--accent-light:#f0e8ee;--accent2:#9e5f7c;--border:rgba(34,26,36,.09);--radius:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 5vw;background:rgba(244,241,243,.93);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 2px 20px rgba(34,26,36,.07)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;gap:.2rem;list-style:none}
+.nav-links a{color:var(--ink-muted);text-decoration:none;font-size:.73rem;letter-spacing:.07em;text-transform:uppercase;padding:.38rem .8rem;border-radius:999px;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-links a.active{color:var(--accent);background:var(--accent-light)}
+.nav-cta{border:1px solid var(--accent)!important;color:var(--accent)!important}
+.nav-cta:hover{background:var(--accent)!important;color:#fff!important}
+.nav-cta.active{background:transparent!important;color:var(--accent)!important}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.4rem;background:none;border:none}
+.nav-burger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:transform .3s,opacity .3s}
+.nav-drawer{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(244,241,243,.97);backdrop-filter:blur(20px);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.nav-drawer.open{display:flex}
+.nav-drawer a{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;color:var(--ink);text-decoration:none;letter-spacing:-.01em;transition:color .2s}
+.nav-drawer a:hover{color:var(--accent)}
+.nav-drawer a.nav-cta{font-size:1rem!important;padding:.65rem 1.75rem!important;border-radius:999px!important;font-family:'DM Sans',sans-serif!important}
+.nav-drawer-close{position:absolute;top:1.25rem;right:1.5rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--ink-muted);line-height:1}
+
+/* SIDE DOTS */
+.side-nav{position:fixed;right:1.75rem;top:50%;transform:translateY(-50%);z-index:100;display:none;flex-direction:column;gap:.75rem;align-items:flex-end}
+.side-dot{display:flex;align-items:center;gap:.6rem;cursor:pointer;text-decoration:none}
+.side-dot-label{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);opacity:0;transform:translateX(4px);transition:opacity .2s,transform .2s;white-space:nowrap}
+.side-dot:hover .side-dot-label,.side-dot.active .side-dot-label{opacity:1;transform:none;color:var(--accent)}
+.side-dot-pip{width:5px;height:5px;border-radius:50%;background:var(--ink-faint);transition:height .25s,background .25s,border-radius .25s;flex-shrink:0}
+.side-dot.active .side-dot-pip{height:22px;border-radius:3px;background:var(--accent)}
+
+.section-block{scroll-margin-top:66px}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 5vw 4rem;padding-top:100px;position:relative;overflow:hidden}
+.hero-deco{position:absolute;top:0;right:-1vw;font-family:'Cormorant Garamond',serif;font-size:clamp(18rem,28vw,32rem);font-weight:600;line-height:.85;color:transparent;-webkit-text-stroke:1px rgba(122,79,109,.1);pointer-events:none;user-select:none;letter-spacing:-.05em;transform:translateY(10%)}
+.hero-meta{display:flex;align-items:center;gap:.75rem;margin-bottom:2.5rem;opacity:0;animation:fadeUp .7s .1s forwards}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.hero-meta-text{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted)}
+.hero-meta-div{width:1px;height:12px;background:var(--border)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,8vw,7.5rem);font-weight:400;font-style:normal;line-height:.95;letter-spacing:-.02em;margin-bottom:2rem;max-width:900px;color:var(--accent);opacity:0;animation:fadeUp .8s .25s forwards}
+.hero-title em{font-style:italic;color:var(--ink);font-weight:600}
+.hero-bottom{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;opacity:0;animation:fadeUp .8s .45s forwards}
+.hero-desc{font-size:1rem;color:var(--ink-muted);line-height:1.85;max-width:420px}
+.hero-right-block{display:flex;flex-direction:column;gap:1.5rem;align-items:flex-end}
+.hero-photo-wrap{position:relative;flex-shrink:0}
+.hero-photo{width:220px;height:174px;object-fit:cover;object-position:center top;border-radius:16px;display:block;filter:brightness(.97) contrast(1.02)}
+.hero-photo-wrap::before{content:'';position:absolute;inset:-5px;border-radius:20px;border:1.5px solid var(--accent);opacity:.35;pointer-events:none}
+.hero-photo-wrap::after{content:'';position:absolute;inset:-11px;border-radius:25px;border:1px solid var(--accent);opacity:.15;pointer-events:none}
+.hero-stats{display:flex;gap:2.5rem}
+.hero-stat-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:500;color:var(--ink);line-height:1}
+.hero-stat-label{font-size:.68rem;color:var(--ink-faint);letter-spacing:.04em;margin-top:.2rem}
+.hero-ctas{display:flex;gap:.65rem;flex-wrap:wrap;justify-content:flex-end}
+.btn-p{padding:.62rem 1.5rem;background:var(--accent);color:#fff;border-radius:999px;text-decoration:none;font-size:.8rem;font-weight:500;transition:opacity .2s,transform .15s}
+.btn-p:hover{opacity:.88;transform:translateY(-1px)}
+.btn-o{padding:.62rem 1.5rem;border:1px solid var(--border);color:var(--ink-muted);border-radius:999px;text-decoration:none;font-size:.8rem;transition:background .2s,color .2s,border-color .2s}
+.btn-o:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+.scroll-line{position:absolute;bottom:2.5rem;left:5vw;display:flex;align-items:center;gap:.75rem;opacity:0;animation:fadeUp .6s .8s forwards}
+.scroll-line::before{content:'';width:40px;height:1px;background:var(--ink-faint)}
+.scroll-text{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* CHAPTER BREAK */
+.chapter{width:100%;background:var(--ink);padding:1.5rem 5vw;display:flex;align-items:center;justify-content:space-between;gap:2rem;position:relative}
+.chapter::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent);transform:scaleY(0);transform-origin:top;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.chapter.bar-visible::before{transform:scaleY(1)}
+.chapter-left{display:flex;align-items:baseline;gap:1.25rem}
+.chapter-num{font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(255,255,255,.25);letter-spacing:.08em}
+.chapter-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:#fff}
+.chapter-name em{font-style:italic;color:rgba(255,255,255,.55)}
+.chapter-desc{font-size:.73rem;color:rgba(255,255,255,.38);letter-spacing:.04em;text-align:right;max-width:340px;line-height:1.6}
+
+.sec{padding:4rem 5vw;max-width:1180px;margin:0 auto}
+
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.proj-card{background:var(--surface);padding:1.65rem;display:flex;flex-direction:column;gap:.8rem;transition:background .22s,box-shadow .22s;text-decoration:none;color:inherit}
+.proj-card:hover{background:#fdf9fc}
+.proj-card.wide{grid-column:span 1}
+.proj-num{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--ink-faint)}
+.proj-type{font-size:.62rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-faint)}
+.proj-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:500;color:var(--ink);line-height:1.2}
+.proj-desc{font-size:.845rem;color:var(--ink-muted);line-height:1.8;flex:1}
+.proj-foot{display:flex;align-items:center;justify-content:space-between;margin-top:.4rem}
+.proj-tags{display:flex;flex-wrap:wrap;gap:.32rem}
+.proj-tag{padding:.18rem .55rem;border-radius:4px;font-size:.68rem;background:var(--bg);color:var(--ink-muted);border:1px solid var(--border)}
+.proj-arrow{font-size:.78rem;color:var(--ink-faint);transition:color .2s,transform .2s;flex-shrink:0}
+.proj-card:hover .proj-arrow{color:var(--accent);transform:translate(2px,-2px)}
+.proj-status{display:inline-flex;align-items:center;gap:.38rem;font-size:.65rem;letter-spacing:.06em;color:var(--accent)}
+.proj-status::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+/* Featured/active cards */
+.proj-card.featured{background:#fdf6fb;box-shadow:inset 0 3px 0 var(--accent)}
+.proj-card.featured:hover{background:#faeef6}
+.proj-card.featured .proj-name{color:var(--accent)}
+
+/* TIMELINE */
+.tl{display:grid;grid-template-columns:190px 1fr}
+.tl-row{display:contents}
+.tl-left{padding:1.5rem 2rem 1.5rem 0;border-right:1px solid var(--border);text-align:right;border-bottom:1px solid var(--border)}
+.tl-right{padding:1.5rem 0 1.5rem 2rem;border-bottom:1px solid var(--border)}
+.tl-row:last-child .tl-left,.tl-row:last-child .tl-right{border-bottom:none}
+.tl-period{font-size:.7rem;color:var(--ink-faint);letter-spacing:.04em;line-height:1.5}
+.tl-role{font-family:'Cormorant Garamond',serif;font-size:1.12rem;font-weight:500;color:var(--ink);margin-bottom:.18rem;line-height:1.3}
+.tl-org{font-size:.78rem;color:var(--accent);margin-bottom:.65rem}
+.tl-org.ext{color:var(--accent2)}
+.tl-pts{padding-left:1rem}
+.tl-pts li{font-size:.835rem;color:var(--ink-muted);line-height:1.7;margin-bottom:.25rem}
+
+/* PUBLICATIONS */
+.pub-list{display:flex;flex-direction:column}
+.pub-row{display:grid;grid-template-columns:52px 1fr auto;gap:1rem 1.4rem;align-items:center;padding:1.35rem 1rem;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;transition:background .2s;border-radius:8px;margin:0 -1rem}
+.pub-row:first-child{border-top:1px solid var(--border)}
+.pub-row:hover{background:var(--accent-light)}
+.pub-index{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;color:var(--ink-faint);line-height:1;text-align:right}
+.pub-title{font-size:.88rem;font-weight:500;color:var(--ink);line-height:1.5;margin-bottom:.28rem}
+.pub-meta{font-size:.73rem;color:var(--ink-muted);display:flex;flex-wrap:wrap;gap:.45rem;align-items:center}
+.pub-badge{font-size:.62rem;font-weight:500;letter-spacing:.06em;padding:.15rem .55rem;border-radius:4px;background:var(--accent-light);color:var(--accent)}
+.pub-badge.pat{background:#ede8f5;color:#5b3d8a}
+.pub-year{font-size:.65rem;color:var(--ink-faint)}
+.pub-ext{font-size:.72rem;color:var(--ink-faint);transition:color .2s,transform .2s;display:inline-block}
+.pub-row:hover .pub-ext{color:var(--accent);transform:translate(2px,-2px)}
+
+/* SKILLS — 4 column even grid */
+.skills-outer{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.skill-group{background:var(--surface);padding:1.35rem}
+.skill-group-title{font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.85rem}
+.skill-pills{display:flex;flex-wrap:wrap;gap:.38rem}
+.skill-pill{padding:.22rem .62rem;background:var(--bg);border-radius:4px;font-size:.76rem;color:var(--ink-muted);border:1px solid var(--border)}
+.skill-group.wide{grid-column:span 1}
+
+/* AWARDS */
+.awards-list{display:flex;flex-direction:column}
+.award-row{display:grid;grid-template-columns:1fr auto;align-items:start;gap:1rem;padding:1.2rem 0;border-bottom:1px solid var(--border)}
+.award-row:first-child{border-top:1px solid var(--border)}
+.award-name{font-size:.88rem;font-weight:500;color:var(--ink);margin-bottom:.18rem}
+.award-desc{font-size:.78rem;color:var(--ink-muted);line-height:1.55}
+.award-year{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--ink-faint);white-space:nowrap}
+
+/* VOLUNTEERING */
+.vol-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
+.vol-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem}
+.vol-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;color:var(--ink);margin-bottom:.2rem;line-height:1.3}
+.vol-role{font-size:.78rem;color:var(--accent);margin-bottom:.6rem}
+.vol-period{font-size:.68rem;color:var(--ink-faint);letter-spacing:.04em;margin-bottom:.6rem}
+.vol-desc{font-size:.82rem;color:var(--ink-muted);line-height:1.7}
+
+/* CONTACT */
+.contact-band{margin:0 5vw 5rem;background:var(--ink);border-radius:18px;padding:4rem 5vw;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;overflow:hidden}
+.contact-deco{position:absolute;right:-2vw;top:-20%;font-family:'Cormorant Garamond',serif;font-size:22rem;font-weight:600;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.05);pointer-events:none;user-select:none}
+.contact-eyebrow{font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1rem}
+.contact-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.8vw,3.2rem);font-weight:400;color:#fff;line-height:1.1;margin-bottom:1.2rem}
+.contact-title em{font-style:italic}
+.contact-desc{font-size:.88rem;color:rgba(255,255,255,.55);line-height:1.8;max-width:360px}
+.contact-right{display:flex;flex-direction:column;gap:.65rem;position:relative}
+.c-btn{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.35rem;border-radius:10px;text-decoration:none;font-size:.82rem;transition:background .2s,transform .15s;border:1px solid rgba(255,255,255,.1);color:#fff}
+.c-btn:hover{background:rgba(255,255,255,.07);transform:translateX(3px)}
+.c-btn.primary{background:var(--accent);border-color:transparent}
+.c-btn.primary:hover{opacity:.9;transform:translateX(3px)}
+.c-btn-label{display:flex;align-items:center;gap:.55rem}
+.c-btn-icon{width:26px;height:26px;border-radius:6px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0}
+.c-btn-arrow{font-size:.72rem;opacity:.4}
+
+footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
+.footer-name{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--ink)}
+.footer-note{font-size:.72rem;color:var(--ink-faint)}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:none}
+.sub-eyebrow{font-size:.65rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;margin-top:3.5rem}
+
+@media(max-width:1000px){
+  .skills-outer{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1100px){.side-nav{display:flex}}
+@media(max-width:600px){
+}
+@media(max-width:900px){
+  .hero-bottom{grid-template-columns:1fr}
+  .hero-right-block{align-items:flex-start}
+  .hero-ctas{justify-content:flex-start}
+  .proj-grid{grid-template-columns:1fr}
+  .proj-card.wide{grid-column:span 1}
+  .tl{grid-template-columns:1fr}
+  .tl-left{border-right:none;text-align:left;padding:1rem 0 .2rem;border-bottom:none}
+  .tl-right{padding:0 0 1.5rem}
+  .contact-band{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .side-nav{display:none!important}
+  .nav-burger{display:flex}
+  .chapter-desc{display:none}
+  .pub-row{grid-template-columns:40px 1fr auto}
+}
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a class="nav-logo" href="#">Ritika Agarwal</a>
+  <ul class="nav-links">
+    <li><a href="#projects"   data-section="projects">Projects</a></li>
+    <li><a href="#experience" data-section="experience">Experience</a></li>
+    <li><a href="#research"   data-section="research">Research</a></li>
+    <li><a href="#skills"     data-section="skills">Skills</a></li>
+    <li><a href="#awards"     data-section="awards">Awards</a></li>
+    <li><a href="#volunteering" data-section="volunteering">Volunteering</a></li>
+    <li><a href="#contact"    data-section="contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-drawer" id="nav-drawer">
+  <button class="nav-drawer-close" id="nav-drawer-close" aria-label="Close menu">&#x2715;</button>
+  <a href="#projects"     onclick="closeDrawer()">Projects</a>
+  <a href="#experience"   onclick="closeDrawer()">Experience</a>
+  <a href="#research"     onclick="closeDrawer()">Research</a>
+  <a href="#skills"       onclick="closeDrawer()">Skills</a>
+  <a href="#awards"       onclick="closeDrawer()">Awards</a>
+  <a href="#volunteering" onclick="closeDrawer()">Volunteering</a>
+  <a href="#contact"      onclick="closeDrawer()" class="nav-cta">Contact</a>
+</div>
+
+
+<!-- HERO -->
+<section class="hero">
+  <canvas id="hero-canvas" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.55"></canvas>
+  <div class="hero-deco" aria-hidden="true">RA</div>
+  <div class="hero-meta">
+    <span class="hero-dot"></span>
+    <span class="hero-meta-text">ML Engineer &amp; AI Product Builder</span>
+    <span class="hero-meta-div"></span>
+    <span class="hero-meta-text">UPenn MSE '27</span>
+    <span class="hero-meta-div"></span>
+    <span class="hero-meta-text">Open to roles</span>
+  </div>
+  <h1 class="hero-title">Building systems where<br><em>data meets decisions</em></h1>
+  <div class="hero-bottom">
+    <p class="hero-desc">MSE student at Penn (CIS) with 4+ years at VMware &amp; EY. I work across ML pipelines, data engineering, and AI product — from clinical ML research and published patents to LLM-powered career tools. I care about problems where data, systems, and real decisions meet.</p>
+    <div class="hero-right-block">
+      <div class="hero-photo-wrap">
+        <img class="hero-photo" src="data:image/jpeg;base64,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" alt="Ritika Agarwal">
+      </div>
+      <div class="hero-stats">
+        <div><div class="hero-stat-num">4+</div><div class="hero-stat-label">Years industry</div></div>
+        <div><div class="hero-stat-num">3</div><div class="hero-stat-label">Publications</div></div>
+        <div><div class="hero-stat-num">1</div><div class="hero-stat-label">Patent</div></div>
+      </div>
+      <div class="hero-ctas">
+        <a href="/cdn-cgi/l/email-protection#addfc4d9c4c6cc83cccacc9c949495edcac0ccc4c183cec2c0" class="btn-p">Get in touch</a>
+        <a href="https://www.linkedin.com/in/ritikaagarwal1998" target="_blank" rel="noopener" class="btn-o">LinkedIn ↗</a>
+        <a href="https://github.com/Riaga1998" target="_blank" rel="noopener" class="btn-o">GitHub ↗</a>
+        <a href="https://scholar.google.com/citations?user=a_FAQb8AAAAJ&hl=en" target="_blank" rel="noopener" class="btn-o">Scholar ↗</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-line" aria-hidden="true"><span class="scroll-text">Scroll to explore</span></div>
+</section>
+
+<!-- ═══ PROJECTS ═══ -->
+<div class="section-block" id="projects">
+  <div class="chapter">
+    <div class="chapter-left"><span class="chapter-num">01</span><span class="chapter-name">Work &amp; <em>Projects</em></span></div>
+    <span class="chapter-desc">6 projects · AI product, ML research, data engineering, bioinformatics, community infrastructure</span>
+  </div>
+  <div class="sec">
+    <div class="proj-grid reveal">
+
+      <a class="proj-card featured" href="https://github.com/whartonAIclub/penn-tools" target="_blank" rel="noopener">
+        <div class="proj-num">01</div>
+        <div class="proj-type">AI Product · Live</div>
+        <div class="proj-name">Career Canvas — Ask Penn Platform</div>
+        <div class="proj-status">Active — Wharton AI-PMT, UPenn</div>
+        <p class="proj-desc">An AI-powered academic and career planning platform launching on Penn's Ask Penn student tools platform. Designed and leading end-to-end development — covering user profile extraction, skill gap analysis, academic planning, and LLM-driven personalised recommendations. Also a maintainer on the broader Ask Penn platform.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">LLMs</span><span class="proj-tag">Prompt Engineering</span><span class="proj-tag">Product Strategy</span><span class="proj-tag">Python</span><span class="proj-tag">API Integration</span></div>
+          <span class="proj-arrow">↗</span>
+        </div>
+      </a>
+
+      <div class="proj-card featured">
+        <div class="proj-num">02</div>
+        <div class="proj-type">Research · Data Engineering</div>
+        <div class="proj-name">Histology Image Compression</div>
+        <div class="proj-status">Active — UPenn Perelman SOM</div>
+        <p class="proj-desc">Scalable tile-based pipelines for multi-gigapixel whole-slide TIFF images. Replication study comparing JPEG, JPEG 2000, and JPEG XL codecs — evaluating quality trade-offs using SSIM for clinical storage optimisation.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Pipelines</span><span class="proj-tag">Medical Imaging</span></div>
+        </div>
+      </div>
+
+      <a class="proj-card featured" href="https://github.com/iscss" target="_blank" rel="noopener">
+        <div class="proj-num">03</div>
+        <div class="proj-type">Web Infrastructure · Community</div>
+        <div class="proj-name">ISCSS — International Society for Computational Social Science</div>
+        <div class="proj-status">Active — CSS Lab, UPenn</div>
+        <p class="proj-desc">Overseeing website and deployment for the entire ISCSS organisation, including the IC2S2 annual conference platform. Manages GitHub workflows, Netlify deployments, and job board systems for a global academic audience.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">Netlify</span><span class="proj-tag">GitHub</span><span class="proj-tag">DevOps</span></div>
+          <span class="proj-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="proj-card" href="https://github.com/Riaga1998/Gemz" target="_blank" rel="noopener">
+        <div class="proj-num">04</div>
+        <div class="proj-type">ML Research · Healthcare</div>
+        <div class="proj-name">Gemcitabine Resistance Prediction</div>
+        <p class="proj-desc">End-to-end ML pipeline for chemotherapy resistance in pancreatic cancer. Beam-search feature selection + SVMs on 1,527-feature genomic data — 4-gene biomarker panel, AUC = 1.00 across 50 cross-validation runs.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">SVM</span><span class="proj-tag">XGBoost</span><span class="proj-tag">Genomics</span></div>
+          <span class="proj-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="proj-card" href="https://github.com/Riaga1998/LDopa" target="_blank" rel="noopener">
+        <div class="proj-num">05</div>
+        <div class="proj-type">ML · Patent · Publication</div>
+        <div class="proj-name">L-Dopa Response Prediction — Parkinson's</div>
+        <p class="proj-desc">Supervised ML model predicting levodopa treatment response using clinical and wearable sensor data. ~89% classification accuracy. Led to a journal article, review article, and a granted patent — full end-to-end AI for clinical decision support.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">Clinical ML</span><span class="proj-tag">Feature Engineering</span><span class="proj-tag">Sensor Data</span><span class="proj-tag">Patent</span><span class="proj-tag">Published</span></div>
+          <span class="proj-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="proj-card" href="https://scholar.google.com/citations?user=a_FAQb8AAAAJ&hl=en" target="_blank" rel="noopener">
+        <div class="proj-num">06</div>
+        <div class="proj-type">Bioinformatics · Publication</div>
+        <div class="proj-name">Genome-wide MicroRNA — Brassica</div>
+        <p class="proj-desc">Computational genomics study of microRNA evolution across Brassica species. Led multi-institutional collaboration between Amity &amp; JNU. Contributed to a peer-reviewed publication.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">BLAST</span><span class="proj-tag">MEGA v7</span><span class="proj-tag">Genomics</span></div>
+          <span class="proj-arrow">↗</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══ EXPERIENCE ═══ -->
+<div class="section-block" id="experience">
+  <div class="chapter">
+    <div class="chapter-left"><span class="chapter-num">02</span><span class="chapter-name">Work <em>Experience</em></span></div>
+    <span class="chapter-desc">4+ years industry · VMware / Omnissa, EY, UPenn research labs</span>
+  </div>
+  <div class="sec">
+    <div class="tl reveal">
+
+      <div class="tl-row">
+        <div class="tl-left"><div class="tl-period">Mar 2026 – Present</div></div>
+        <div class="tl-right">
+          <div class="tl-role">Student Researcher</div>
+          <div class="tl-org">Digital Pathology Research Lab · University of Pennsylvania</div>
+          <ul class="tl-pts">
+            <li>Building tile-based data pipelines for multi-gigapixel whole-slide histology images (TIFF).</li>
+            <li>Replication study comparing JPEG, JPEG 2000, and JPEG XL compression codecs for clinical digital pathology.</li>
+            <li>Evaluating compression trade-offs using SSIM to optimise storage efficiency without compromising diagnostic quality.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-left"><div class="tl-period">Feb 2026 – Present</div></div>
+        <div class="tl-right">
+          <div class="tl-role">AI Product Manager Fellow</div>
+          <div class="tl-org">Wharton AI-PMT · The Wharton School, UPenn</div>
+          <ul class="tl-pts">
+            <li>Selected for a competitive cohort designing and launching AI products with Wharton MBAs and engineers.</li>
+            <li>Proposed and leading Career Canvas — an LLM-driven academic and career planning tool for Penn students.</li>
+            <li>Defined product vision, user flows, and feature roadmap; driving execution across engineering and design tracks.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-left"><div class="tl-period">Feb 2026 – Present</div></div>
+        <div class="tl-right">
+          <div class="tl-role">Research Assistant &amp; Events Coordinator</div>
+          <div class="tl-org">Computational Social Science Lab · University of Pennsylvania</div>
+          <ul class="tl-pts">
+            <li>Overseeing website and deployment infrastructure for the entire ISCSS organisation.</li>
+            <li>Maintaining IC2S2 conference platform via Netlify and GitHub — branch management, version control, deployment pipelines.</li>
+            <li>Analysing engagement data to improve outreach strategy and platform usability.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-left"><div class="tl-period">Sep 2024 – Jul 2025</div></div>
+        <div class="tl-right">
+          <div class="tl-role">Engineer L-2</div>
+          <div class="tl-org ext">Omnissa (formerly VMware) · Bengaluru, India</div>
+          <ul class="tl-pts">
+            <li>Continued L2 engineering post-VMware spinoff; specialising in VMware Workspace ONE product suite — UEM, Access, and Intelligence.</li>
+            <li>Supporting enterprise IAM, cloud authentication, and identity systems at scale across global enterprise clients.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-left"><div class="tl-period">Mar 2021 – Aug 2024</div></div>
+        <div class="tl-right">
+          <div class="tl-role">Technical Support Engineer L1 → L2</div>
+          <div class="tl-org ext">VMware · Bengaluru, India</div>
+          <ul class="tl-pts">
+            <li>Advanced technical support for VMware Workspace ONE UEM, Access, and Intelligence — specialising in cloud-based authentication, IAM, and SSO/MFA across large-scale enterprise environments.</li>
+            <li>Diagnosed and resolved 15+ complex incidents weekly using root-cause analysis on system logs, API interactions, and cloud configurations.</li>
+            <li>Maintained 100% customer satisfaction across complex enterprise accounts.</li>
+            <li>Designed and led hands-on technical training for 20+ engineers across the EMEA region.</li>
+            <li>Received VMware "At Our Best" Award (Workspace ONE EMEA) for high customer satisfaction and rapid issue resolution, Aug 2021.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-left"><div class="tl-period">Oct 2020 – Mar 2021</div></div>
+        <div class="tl-right">
+          <div class="tl-role">Analyst</div>
+          <div class="tl-org ext">EY LLP · Gurugram, India</div>
+          <ul class="tl-pts">
+            <li>Led end-to-end development of a Master Data Management tool, reducing client onboarding time by 20%.</li>
+            <li>Translated client business requirements into scalable data solutions; delivered stakeholder-facing documentation and presentations.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-left"><div class="tl-period">Jun – Jul 2020</div></div>
+        <div class="tl-right">
+          <div class="tl-role">Intern &amp; Trainee</div>
+          <div class="tl-org ext">Allsoft Solutions &amp; Services · Gurugram, India</div>
+          <ul class="tl-pts">
+            <li>Six-week industry training in Machine Learning with Allsoft Solutions in collaboration with IBM.</li>
+            <li>Built industry projects in Python: Real Estate Price Prediction, movie recommendation system, stock market analysis, and image classification.</li>
+            <li>Earned IBM digital badges in Statistics 101, Data Visualization, Data Analysis, and R Essentials.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-left"><div class="tl-period">May – Jul 2019</div></div>
+        <div class="tl-right">
+          <div class="tl-role">Research Intern</div>
+          <div class="tl-org ext">Jawaharlal Nehru University · New Delhi, India</div>
+          <ul class="tl-pts">
+            <li>Computational genomics research on microRNA evolution using BLAST and MEGA v7; co-authored publication as sole intern.</li>
+            <li>Led multi-institutional data integration between Amity University and JNU for genome-wide analysis.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══ RESEARCH ═══ -->
+<div class="section-block" id="research">
+  <div class="chapter">
+    <div class="chapter-left"><span class="chapter-num">03</span><span class="chapter-name">Research <em>&amp; IP</em></span></div>
+    <span class="chapter-desc">3 publications · 1 patent · peer reviewer</span>
+  </div>
+  <div class="sec">
+    <div class="pub-list reveal">
+      <a class="pub-row" href="https://www.journalajrcos.com" target="_blank" rel="noopener">
+        <div class="pub-index">01</div>
+        <div class="pub-body">
+          <div class="pub-title">Peer Reviewer — Asian Journal of Research in Computer Science</div>
+          <div class="pub-meta">Invited manuscript peer review <span class="pub-year">Feb 2025</span> <span class="pub-badge">Reviewer</span></div>
+        </div>
+        <div class="pub-ext">↗</div>
+      </a>
+      <a class="pub-row" href="https://scholar.google.com/citations?user=a_FAQb8AAAAJ&hl=en" target="_blank" rel="noopener">
+        <div class="pub-index">02</div>
+        <div class="pub-body">
+          <div class="pub-title">A system and method of L-DOPA response prediction for Parkinson's Disease using a Machine Learning approach</div>
+          <div class="pub-meta">Granted Patent · Applied ML <span class="pub-year">Oct 2021</span> <span class="pub-badge pat">Patent</span></div>
+        </div>
+        <div class="pub-ext">↗</div>
+      </a>
+      <a class="pub-row" href="https://www.tandfonline.com/doi/full/10.1080/08839514.2021.1975881" target="_blank" rel="noopener">
+        <div class="pub-index">03</div>
+        <div class="pub-body">
+          <div class="pub-title">Classification-based levodopamine response prediction in Parkinson's disorder</div>
+          <div class="pub-meta">Applied Artificial Intelligence · Vol 35, No 15 <span class="pub-year">2021</span> <span class="pub-badge">Journal</span></div>
+        </div>
+        <div class="pub-ext">↗</div>
+      </a>
+      <a class="pub-row" href="https://www.psychosocial.com/index.php/ijpr/article/view/5658" target="_blank" rel="noopener">
+        <div class="pub-index">04</div>
+        <div class="pub-body">
+          <div class="pub-title">Parkinson's Disorder: Taking a step towards homogenizing machine learning and medical science</div>
+          <div class="pub-meta">International Journal of Psychosocial Rehabilitation · Vol 24, Issue 04 <span class="pub-year">2020</span> <span class="pub-badge">Review</span></div>
+        </div>
+        <div class="pub-ext">↗</div>
+      </a>
+      <a class="pub-row" href="https://scholar.google.com/citations?user=a_FAQb8AAAAJ&hl=en" target="_blank" rel="noopener">
+        <div class="pub-index">05</div>
+        <div class="pub-body">
+          <div class="pub-title">Genome-wide evolutionary analysis of precursor sequences of MIR156 and MIR172 family members in Brassica species</div>
+          <div class="pub-meta">Bioinformatics · JNU collaboration <span class="pub-year">2020</span> <span class="pub-badge">Journal</span></div>
+        </div>
+        <div class="pub-ext">↗</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SKILLS ═══ -->
+<div class="section-block" id="skills">
+  <div class="chapter">
+    <div class="chapter-left"><span class="chapter-num">04</span><span class="chapter-name">Technical <em>Skills</em></span></div>
+    <span class="chapter-desc">Python · SQL · ML · LLMs · Cloud · IAM · Product</span>
+  </div>
+  <div class="sec">
+    <div class="skills-outer reveal">
+      <div class="skill-group">
+        <div class="skill-group-title">Languages &amp; Frameworks</div>
+        <div class="skill-pills"><span class="skill-pill">Python</span><span class="skill-pill">SQL</span><span class="skill-pill">C / C++</span><span class="skill-pill">LaTeX</span><span class="skill-pill">Scikit-learn</span><span class="skill-pill">TensorFlow</span><span class="skill-pill">PyTorch</span><span class="skill-pill">Pandas · NumPy</span><span class="skill-pill">OpenCV</span></div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">ML &amp; AI</div>
+        <div class="skill-pills"><span class="skill-pill">Machine Learning</span><span class="skill-pill">Deep Learning</span><span class="skill-pill">NLP</span><span class="skill-pill">LLMs</span><span class="skill-pill">Prompt Design</span><span class="skill-pill">Predictive Modeling</span></div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Data &amp; Pipelines</div>
+        <div class="skill-pills"><span class="skill-pill">ETL</span><span class="skill-pill">Data Pipelines</span><span class="skill-pill">Feature Engineering</span><span class="skill-pill">Power BI</span><span class="skill-pill">Tableau</span><span class="skill-pill">Data Warehousing</span></div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Cloud &amp; Enterprise</div>
+        <div class="skill-pills"><span class="skill-pill">IAM</span><span class="skill-pill">SSO / SAML / MFA</span><span class="skill-pill">Azure AD</span><span class="skill-pill">Workspace ONE UEM</span><span class="skill-pill">Workspace ONE Access</span><span class="skill-pill">Microsoft Intune</span><span class="skill-pill">REST APIs</span><span class="skill-pill">Photon OS</span></div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Tools &amp; Platforms</div>
+        <div class="skill-pills"><span class="skill-pill">Git · GitHub</span><span class="skill-pill">Jupyter</span><span class="skill-pill">Netlify</span><span class="skill-pill">JIRA</span><span class="skill-pill">Salesforce</span><span class="skill-pill">Active Directory</span><span class="skill-pill">BLAST · MEGA v7</span><span class="skill-pill">Google Colab</span></div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Product &amp; Strategy</div>
+        <div class="skill-pills"><span class="skill-pill">Product Strategy</span><span class="skill-pill">User Research</span><span class="skill-pill">Roadmapping</span><span class="skill-pill">PRD Writing</span><span class="skill-pill">Stakeholder Comms</span><span class="skill-pill">Cross-functional Teams</span><span class="skill-pill">SDLC</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ AWARDS ═══ -->
+<div class="section-block" id="awards">
+  <div class="chapter">
+    <div class="chapter-left"><span class="chapter-num">05</span><span class="chapter-name">Honours <em>&amp; Awards</em></span></div>
+    <span class="chapter-desc">HEST National Scholar · Patent · VMware award · Scholarships</span>
+  </div>
+  <div class="sec">
+    <div class="awards-list reveal">
+      <div class="award-row">
+        <div><div class="award-name">HEST National Scholar</div><div class="award-desc">Selected among top students in India through a competitive multi-stage national evaluation.</div></div>
+        <div class="award-year">2025</div>
+      </div>
+      <div class="award-row">
+        <div><div class="award-name">Invited Peer Reviewer</div><div class="award-desc">Invited reviewer for the Asian Journal of Research in Computer Science.</div></div>
+        <div class="award-year">2025</div>
+      </div>
+      <div class="award-row">
+        <div><div class="award-name">Shree Baljit Shastri Award</div><div class="award-desc">Awarded for outstanding undergraduate academic and co-curricular contributions.</div></div>
+        <div class="award-year">2023</div>
+      </div>
+      <div class="award-row">
+        <div><div class="award-name">Granted Patent — ML for Parkinson's</div><div class="award-desc">Published patent for L-DOPA response prediction system using machine learning approach.</div></div>
+        <div class="award-year">2021</div>
+      </div>
+      <div class="award-row">
+        <div><div class="award-name">VMware "At Our Best" Award</div><div class="award-desc">EMEA-wide recognition for exceptional customer satisfaction and rapid incident resolution in Workspace ONE.</div></div>
+        <div class="award-year">2021</div>
+      </div>
+      <div class="award-row">
+        <div><div class="award-name">100% Merit Scholarship</div><div class="award-desc">Full first-year tuition scholarship at Amity University Haryana for exceptional high school academic performance.</div></div>
+        <div class="award-year">2016</div>
+      </div>
+    </div>
+
+    <div class="sub-eyebrow reveal">Education</div>
+    <div class="tl reveal">
+      <div class="tl-row">
+        <div class="tl-left"><div class="tl-period">Aug 2025 – May 2027</div></div>
+        <div class="tl-right">
+          <div class="tl-role">Master of Science in Engineering, Computer &amp; Information Science</div>
+          <div class="tl-org">University of Pennsylvania, School of Engineering and Applied Science</div>
+          <ul class="tl-pts">
+            <li>Concentration: Artificial Intelligence</li>
+            <li>Coursework: Machine Learning, Algorithms for Big Data, Trustworthy ML, Foundations of AI: Deep Learning</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-left"><div class="tl-period">Aug 2016 – Sep 2020</div></div>
+        <div class="tl-right">
+          <div class="tl-role">Bachelor of Technology, Computer Science &amp; Engineering</div>
+          <div class="tl-org ext">Amity University Haryana · Gurugram, India</div>
+          <ul class="tl-pts">
+            <li>Minor Degree in Data Analytics</li>
+            <li>Coursework: Artificial Intelligence, Genetic Algorithms, Soft Computing, Statistics &amp; Statistical Quality Control</li>
+            <li>Shree Baljit Shastri Award recipient for outstanding undergraduate contributions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ VOLUNTEERING ═══ -->
+<div class="section-block" id="volunteering">
+  <div class="chapter">
+    <div class="chapter-left"><span class="chapter-num">06</span><span class="chapter-name">Volunteering <em>&amp; Co-curricular</em></span></div>
+    <span class="chapter-desc">Community teaching · mentoring · student organisations · social impact</span>
+  </div>
+  <div class="sec">
+    <div class="vol-grid reveal">
+
+      <div class="vol-card">
+        <div class="vol-name">ISCSS Conference Coordination</div>
+        <div class="vol-role">Events &amp; Communications Coordinator</div>
+        <div class="vol-period">Feb 2026 – Present · Philadelphia, PA</div>
+        <p class="vol-desc">Coordinating virtual and in-person events for the International Society for Computational Social Science. Managing scheduling, communications, technical logistics, and content for a global academic community of 1,000+ members.</p>
+      </div>
+
+      <div class="vol-card">
+        <div class="vol-name">FIFE Academy — Technical Instructor</div>
+        <div class="vol-role">Instructor</div>
+        <div class="vol-period">Philadelphia, PA</div>
+        <p class="vol-desc">Instructor at FIFE Academy, delivering technical courses for students. Focused on building foundational skills and applied knowledge through structured curriculum and hands-on learning.</p>
+      </div>
+
+      <div class="vol-card">
+        <div class="vol-name">SAKAAR — Social Impact Initiative</div>
+        <div class="vol-role">Volunteer</div>
+        <div class="vol-period">Amity University Haryana · 2016 – 2020</div>
+        <p class="vol-desc">Active volunteer with SAKAAR, a community outreach and social welfare initiative at Amity University. Participated in and organised activities aimed at community development, awareness, and education for underserved groups.</p>
+      </div>
+
+      <div class="vol-card">
+        <div class="vol-name">Student Co-curricular Activities</div>
+        <div class="vol-role">Active Participant — Amity University Haryana</div>
+        <div class="vol-period">Aug 2016 – Sep 2020</div>
+        <p class="vol-desc">Highly active in co-curricular life throughout undergraduate studies — participating in technical competitions, cultural events, and student-led initiatives. Recipient of the Shree Baljit Shastri Award for outstanding undergraduate contributions.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-band" id="contact">
+  <div class="contact-deco" aria-hidden="true">RA</div>
+  <div>
+    <div class="contact-eyebrow">Get in touch</div>
+    <h2 class="contact-title">Let's build something <em>together</em></h2>
+    <p class="contact-desc">Exploring roles in data engineering, AI/ML, and product. Always happy to talk research, projects, or opportunities.</p>
+  </div>
+  <div class="contact-right">
+    <a href="/cdn-cgi/l/email-protection#592b302d30323877383e3868606061193e34383035773a3634" class="c-btn primary">
+      <span class="c-btn-label"><span class="c-btn-icon">@</span><span class="__cf_email__" data-cfemail="64160d100d0f054a050305555d5d5c240309050d084a070b09">[email&#160;protected]</span></span>
+      <span class="c-btn-arrow">↗</span>
+    </a>
+    <a href="https://www.linkedin.com/in/ritikaagarwal1998" target="_blank" rel="noopener" class="c-btn">
+      <span class="c-btn-label"><span class="c-btn-icon">in</span>LinkedIn</span>
+      <span class="c-btn-arrow">↗</span>
+    </a>
+    <a href="https://github.com/Riaga1998" target="_blank" rel="noopener" class="c-btn">
+      <span class="c-btn-label"><span class="c-btn-icon">gh</span>GitHub</span>
+      <span class="c-btn-arrow">↗</span>
+    </a>
+    <a href="https://scholar.google.com/citations?user=a_FAQb8AAAAJ&hl=en" target="_blank" rel="noopener" class="c-btn">
+      <span class="c-btn-label"><span class="c-btn-icon">gs</span>Google Scholar</span>
+      <span class="c-btn-arrow">↗</span>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-name">Ritika Agarwal</span>
+  <span class="footer-note">UPenn MSE '27 · Philadelphia, PA</span>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ── HERO CANVAS: data network ── */
+(function() {
+  var canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var nodes = [];
+  var NODE_COUNT = 38;
+  var MAX_DIST = 160;
+  var accent = [122, 79, 109];
+
+  function resize() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize, {passive:true});
+
+  for (var i = 0; i < NODE_COUNT; i++) {
+    nodes.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
+      r: Math.random() * 2 + 1.2
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      n.x += n.vx;
+      n.y += n.vy;
+      if (n.x < 0 || n.x > canvas.width)  n.vx *= -1;
+      if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+
+      for (var j = i + 1; j < nodes.length; j++) {
+        var m = nodes[j];
+        var dx = n.x - m.x, dy = n.y - m.y;
+        var dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < MAX_DIST) {
+          var alpha = (1 - dist / MAX_DIST) * 0.18;
+          ctx.beginPath();
+          ctx.moveTo(n.x, n.y);
+          ctx.lineTo(m.x, m.y);
+          ctx.strokeStyle = 'rgba(' + accent[0] + ',' + accent[1] + ',' + accent[2] + ',' + alpha + ')';
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + accent[0] + ',' + accent[1] + ',' + accent[2] + ',0.35)';
+      ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ── CHAPTER BAR: animate on scroll entry ── */
+var chapterObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) e.target.querySelector('.chapter').classList.add('bar-visible');
+  });
+}, {threshold: 0.2});
+document.querySelectorAll('.section-block').forEach(function(el) { chapterObs.observe(el); });
+
+var SECTIONS = ['projects','experience','research','skills','awards','volunteering'];
+
+var revealObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold: 0.05});
+document.querySelectorAll('.reveal').forEach(function(el) { revealObs.observe(el); });
+
+function setActive(id) {
+  document.querySelectorAll('[data-section]').forEach(function(el) {
+    el.classList.toggle('active', el.dataset.section === id);
+  });
+}
+
+var sectionEls = SECTIONS.map(function(id) { return document.getElementById(id); }).filter(Boolean);
+
+function updateActive() {
+  var scrollY = window.scrollY + 130;
+  var current = sectionEls[0];
+  for (var i = 0; i < sectionEls.length; i++) {
+    if (sectionEls[i].offsetTop <= scrollY) current = sectionEls[i];
+  }
+  if (current) setActive(current.id);
+}
+
+window.addEventListener('scroll', updateActive, {passive: true});
+updateActive();
+
+var nav = document.getElementById('main-nav');
+window.addEventListener('scroll', function() {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, {passive: true});
+
+/* Mobile drawer */
+function closeDrawer() {
+  document.getElementById('nav-drawer').classList.remove('open');
+}
+var burger = document.getElementById('nav-burger');
+var drawer = document.getElementById('nav-drawer');
+var drawerClose = document.getElementById('nav-drawer-close');
+if (burger) burger.addEventListener('click', function() { drawer.classList.add('open'); });
+if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+</script>
+
+<nav class="side-nav" aria-label="Page sections">
+  <a class="side-dot" href="#projects"     data-section="projects">    <span class="side-dot-label">Projects</span>    <span class="side-dot-pip"></span></a>
+  <a class="side-dot" href="#experience"   data-section="experience">  <span class="side-dot-label">Experience</span>  <span class="side-dot-pip"></span></a>
+  <a class="side-dot" href="#research"     data-section="research">    <span class="side-dot-label">Research</span>    <span class="side-dot-pip"></span></a>
+  <a class="side-dot" href="#skills"       data-section="skills">      <span class="side-dot-label">Skills</span>      <span class="side-dot-pip"></span></a>
+  <a class="side-dot" href="#awards"       data-section="awards">      <span class="side-dot-label">Awards</span>      <span class="side-dot-pip"></span></a>
+  <a class="side-dot" href="#volunteering" data-section="volunteering"><span class="side-dot-label">Volunteering</span><span class="side-dot-pip"></span></a>
+</nav>
+</body>
+</html>
