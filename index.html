@@ -102,7 +102,8 @@ nav.scrolled{box-shadow:0 2px 20px rgba(34,26,36,.07)}
 .about-lead{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:500;line-height:1.35;color:var(--accent);margin-bottom:1.4rem;letter-spacing:-.01em}
 .about-body{font-size:.9rem;color:var(--ink-muted);line-height:1.9;margin-bottom:1.1rem;max-width:62ch}
 .about-body:last-child{margin-bottom:0}
-.about-quote{margin:1.6rem 0;padding:.2rem 0 .2rem 1.5rem;border-left:2px solid var(--accent);font-family:'Cormorant Garamond',serif;font-size:1.28rem;font-style:italic;line-height:1.5;color:var(--ink);max-width:56ch}
+.about-quote{margin:1rem 0 1.6rem;padding:.2rem 0 .2rem 1.5rem;border-left:2px solid var(--accent);font-family:'Cormorant Garamond',serif;font-size:1.28rem;font-style:italic;line-height:1.5;color:var(--ink);max-width:56ch}
+.about-body:has(+ .about-quote){margin-bottom:0}
 .about-side{display:flex;flex-direction:column;gap:1rem}
 .about-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.35rem}
 .about-card-title{font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.85rem}
@@ -350,12 +351,13 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
   <div class="sec">
     <div class="about-grid reveal">
       <div class="about-main">
-        <p class="about-lead">Every project on this page traces back to one thing that happened before I could remember it.</p>
+        <p class="about-lead">Every project here traces back to one thing that happened before I could remember it.</p>
         <p class="about-body">When I was ten, I read about a pancreatic cancer vaccine being developed abroad. My father had died of that same cancer, caught too late, on my second birthday. That day I decided I wanted to spend my life working where health, biology, and technology meet. I didn't have the language for it yet, but it has been my north star ever since.</p>
-        <p class="about-body">The path wasn't linear. I wanted to be a genetic engineer, but there weren't many routes into it in India, so I chased the medical entrance exams, didn't get where I hoped, and briefly studied microbiology before realising I couldn't do biology without the math and logic I loved. I landed in computer science on a full scholarship, and slowly saw it was the better door into the same room: I could bring biology and medicine into code instead of the other way around. Then I found machine learning in a summer course and everything clicked.</p>
-        <p class="about-body">Since then the thread hasn't changed. I published research, filed a patent application, and kept picking problems where AI meets health. Along the way I learned something about myself: I back myself to figure things out. I switched fields with a lot of catching up to do. I started in technical support barely knowing what a localhost was, and became a top performer who built the team's first training program. I don't assume I'll be the most prepared person in the room on day one. I just know that if I put my head down, I'll get there, usually further than I expected.</p>
+        <p class="about-body">The path was anything but linear. I wanted to be a genetic engineer, chased the medical entrance exams, fell short, and briefly studied microbiology before realising I couldn't do biology without the math and logic I loved. I landed in computer science on a full scholarship and slowly saw it was the better door into the same room: I could bring biology and medicine into code instead of the other way around. Then machine learning clicked, and I finally had the tools to chase the thing I'd wanted since I was a kid.</p>
+        <p class="about-body">The thread hasn't changed since. I've published research, filed a patent application, and kept picking problems where AI meets health. And somewhere along the way I learned to trust myself. I've switched fields with a lot of catching up to do, started in technical support barely knowing what a localhost was, and become the person who built the team's first training program. I don't expect to be the most prepared person in the room on day one. I just know that if I put my head down, I'll get there, usually further than I expected.</p>
+        <p class="about-body">What I care about most is trust.</p>
         <blockquote class="about-quote">In anything that affects real people, a confident wrong answer is worse than an honest "I don't know."</blockquote>
-        <p class="about-body">That is the ethic I build on. I'd rather ship something reliable than something that just looks good on a slide, and it shows up in the work: a no-call option when the genomic evidence is weak, flagging small-sample overfitting instead of publishing a perfect-looking score, evaluation metrics written before the results came in. Today I'm at Penn building and evaluating AI products, and heading toward product roles where AI and health meet.</p>
+        <p class="about-body">That's the ethic I build on. I'd rather ship something reliable than something that just looks good on a slide, and it shows up in the work: a no-call option when the genomic evidence is weak, flagging small-sample overfitting instead of publishing a perfect-looking score. Today I'm at Penn, building and evaluating AI products, and heading toward the place I've been walking toward my whole life, where AI and health meet.</p>
       </div>
       <div class="about-side">
         <div class="about-card">
