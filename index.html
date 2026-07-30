@@ -3,12 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ritika Agarwal — Portfolio</title>
-<meta name="description" content="MSE student at Penn (CIS) with 4+ years at VMware & EY. ML pipelines, data engineering, and AI product — from clinical ML research to LLM-powered tools.">
-<meta property="og:title" content="Ritika Agarwal — Portfolio">
-<meta property="og:description" content="MSE student at Penn (CIS) with 4+ years at VMware & EY. ML pipelines, data engineering, and AI product — from clinical ML research to LLM-powered tools.">
+<title>Ritika Agarwal, AI Product &amp; ML</title>
+<meta name="description" content="I build and evaluate AI products, turning messy real-world data into tools people can actually trust. MSE student at Penn (CIS, AI) and Wharton AI-PMT Fellow, with 4+ years at VMware and EY.">
+<meta property="og:title" content="Ritika Agarwal, AI Product &amp; ML">
+<meta property="og:description" content="I build and evaluate AI products, turning messy real-world data into tools people can actually trust. MSE student at Penn (CIS, AI) and Wharton AI-PMT Fellow.">
 <meta property="og:url" content="https://riaga1998.github.io">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://riaga1998.github.io/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ritika Agarwal: I build and evaluate AI products">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ritika Agarwal, AI Product &amp; ML">
+<meta name="twitter:description" content="I build and evaluate AI products, turning messy real-world data into tools people can actually trust.">
+<meta name="twitter:image" content="https://riaga1998.github.io/preview.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f4f1f3;--surface:#fff;--ink:#221a24;--ink-muted:#6b5f6e;--ink-faint:#b8aebb;--accent:#7a4f6d;--accent-light:#f0e8ee;--accent2:#9e5f7c;--border:rgba(34,26,36,.09);--radius:12px}
@@ -79,6 +87,29 @@ nav.scrolled{box-shadow:0 2px 20px rgba(34,26,36,.07)}
 
 .sec{padding:4rem 5vw;max-width:1180px;margin:0 auto}
 
+/* CREDIBILITY STRIP */
+.cred{background:var(--ink);padding:2.5rem 5vw}
+.cred-inner{max-width:1180px;margin:0 auto}
+.cred-eyebrow{font-size:.62rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1.5rem}
+.cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);overflow:hidden}
+.cred-item{background:var(--ink);padding:1.15rem 1.3rem;display:flex;flex-direction:column;gap:.3rem}
+.cred-item-top{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:500;color:#fff;line-height:1.15}
+.cred-item-top em{font-style:italic;color:var(--accent2)}
+.cred-item-label{font-size:.73rem;color:rgba(255,255,255,.5);line-height:1.55}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:3rem;align-items:start}
+.about-lead{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:500;line-height:1.35;color:var(--accent);margin-bottom:1.4rem;letter-spacing:-.01em}
+.about-body{font-size:.9rem;color:var(--ink-muted);line-height:1.9;margin-bottom:1.1rem;max-width:62ch}
+.about-body:last-child{margin-bottom:0}
+.about-quote{margin:1.6rem 0;padding:.2rem 0 .2rem 1.5rem;border-left:2px solid var(--accent);font-family:'Cormorant Garamond',serif;font-size:1.28rem;font-style:italic;line-height:1.5;color:var(--ink);max-width:56ch}
+.about-side{display:flex;flex-direction:column;gap:1rem}
+.about-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.35rem}
+.about-card-title{font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.85rem}
+.about-list{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.about-list li{font-size:.82rem;color:var(--ink-muted);line-height:1.6;padding-left:1rem;position:relative}
+.about-list li::before{content:'';position:absolute;left:0;top:.6em;width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.5}
+
 /* PROJECTS */
 .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
 .proj-card{background:var(--surface);padding:1.65rem;display:flex;flex-direction:column;gap:.8rem;transition:background .22s,box-shadow .22s;text-decoration:none;color:inherit}
@@ -87,14 +118,19 @@ nav.scrolled{box-shadow:0 2px 20px rgba(34,26,36,.07)}
 .proj-num{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--ink-faint)}
 .proj-type{font-size:.62rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-faint)}
 .proj-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:500;color:var(--ink);line-height:1.2}
+.proj-live{display:inline-block;vertical-align:middle;margin-left:.45rem;padding:.15rem .5rem;border-radius:4px;background:var(--accent-light);color:var(--accent);border:1px solid rgba(122,79,109,.22);font-family:'DM Sans',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;white-space:nowrap}
 .proj-desc{font-size:.845rem;color:var(--ink-muted);line-height:1.8;flex:1}
-.proj-foot{display:flex;align-items:center;justify-content:space-between;margin-top:.4rem}
+.proj-foot{display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin-top:.4rem}
+.proj-foot:has(.proj-note){flex-direction:column;align-items:flex-start;gap:.55rem}
 .proj-tags{display:flex;flex-wrap:wrap;gap:.32rem}
 .proj-tag{padding:.18rem .55rem;border-radius:4px;font-size:.68rem;background:var(--bg);color:var(--ink-muted);border:1px solid var(--border)}
 .proj-arrow{font-size:.78rem;color:var(--ink-faint);transition:color .2s,transform .2s;flex-shrink:0}
 .proj-card:hover .proj-arrow{color:var(--accent);transform:translate(2px,-2px)}
+.proj-note{font-size:.65rem;color:var(--ink-faint);letter-spacing:.03em;font-style:italic;flex-shrink:0}
 .proj-status{display:inline-flex;align-items:center;gap:.38rem;font-size:.65rem;letter-spacing:.06em;color:var(--accent)}
-.proj-status::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);animation:pulse 1.8s infinite}
+.proj-status::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.proj-status.live::before{animation:pulse 1.8s infinite}
+@media(prefers-reduced-motion:reduce){.proj-status.live::before{animation:none}}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 /* Featured/active cards */
 .proj-card.featured{background:#fdf6fb;box-shadow:inset 0 3px 0 var(--accent)}
@@ -111,6 +147,8 @@ nav.scrolled{box-shadow:0 2px 20px rgba(34,26,36,.07)}
 .tl-role{font-family:'Cormorant Garamond',serif;font-size:1.12rem;font-weight:500;color:var(--ink);margin-bottom:.18rem;line-height:1.3}
 .tl-org{font-size:.78rem;color:var(--accent);margin-bottom:.65rem}
 .tl-org.ext{color:var(--accent2)}
+.tl-org.has-scope{margin-bottom:.2rem}
+.tl-scope{font-size:.72rem;color:var(--ink-faint);letter-spacing:.03em;margin-bottom:.65rem}
 .tl-pts{padding-left:1rem}
 .tl-pts li{font-size:.835rem;color:var(--ink-muted);line-height:1.7;margin-bottom:.25rem}
 
@@ -128,7 +166,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(34,26,36,.07)}
 .pub-ext{font-size:.72rem;color:var(--ink-faint);transition:color .2s,transform .2s;display:inline-block}
 .pub-row:hover .pub-ext{color:var(--accent);transform:translate(2px,-2px)}
 
-/* SKILLS — 4 column even grid */
+/* SKILLS: 4 column even grid */
 .skills-outer{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
 .skill-group{background:var(--surface);padding:1.35rem}
 .skill-group-title{font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.85rem}
@@ -178,11 +216,15 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
 
 @media(max-width:1000px){
   .skills-outer{grid-template-columns:repeat(2,1fr)}
+  .cred-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(min-width:1100px){}
 @media(max-width:600px){
 }
 @media(max-width:900px){
+  .about-grid{grid-template-columns:1fr;gap:2rem}
+  .cred-grid{grid-template-columns:1fr}
+  .cred{padding:2rem 5vw}
   .hero-bottom{grid-template-columns:1fr}
   .hero-right-block{align-items:flex-start}
   .hero-ctas{justify-content:flex-start}
@@ -204,6 +246,7 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
 <nav id="main-nav">
   <a class="nav-logo" href="#">Ritika Agarwal</a>
   <ul class="nav-links">
+    <li><a href="#about"      data-section="about">About</a></li>
     <li><a href="#projects"   data-section="projects">Projects</a></li>
     <li><a href="#experience" data-section="experience">Experience</a></li>
     <li><a href="#research"   data-section="research">Research</a></li>
@@ -219,6 +262,7 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
 
 <div class="nav-drawer" id="nav-drawer">
   <button class="nav-drawer-close" id="nav-drawer-close" aria-label="Close menu">&#x2715;</button>
+  <a href="#about"        onclick="closeDrawer()">About</a>
   <a href="#projects"     onclick="closeDrawer()">Projects</a>
   <a href="#experience"   onclick="closeDrawer()">Experience</a>
   <a href="#research"     onclick="closeDrawer()">Research</a>
@@ -235,23 +279,23 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
   <div class="hero-deco" aria-hidden="true">RA</div>
   <div class="hero-meta">
     <span class="hero-dot"></span>
-    <span class="hero-meta-text">ML Engineer &amp; AI Product Builder</span>
+    <span class="hero-meta-text">AI · Product · Health</span>
     <span class="hero-meta-div"></span>
     <span class="hero-meta-text">UPenn MSE '27</span>
     <span class="hero-meta-div"></span>
     <span class="hero-meta-text">Open to roles</span>
   </div>
-  <h1 class="hero-title">Building systems where<br><em>data meets decisions</em></h1>
+  <h1 class="hero-title">I build and evaluate<br><em>AI products</em></h1>
   <div class="hero-bottom">
-    <p class="hero-desc">MSE student at Penn (CIS) with 4+ years at VMware &amp; EY. I work across ML pipelines, data engineering, and AI product — from clinical ML research and published patents to LLM-powered career tools. I care about problems where data, systems, and real decisions meet.</p>
+    <p class="hero-desc">I turn messy real-world data into tools people can actually trust. MSE student at Penn (CIS, AI concentration) and a Wharton AI-PMT Fellow, with 4+ years at VMware and EY behind me. My work runs from clinical ML research to LLM-powered products, and I care most about the part everyone skips: honest evaluation.</p>
     <div class="hero-right-block">
       <div class="hero-photo-wrap">
         <img class="hero-photo" src="data:image/jpeg;base64,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" alt="Ritika Agarwal">
       </div>
       <div class="hero-stats">
         <div><div class="hero-stat-num">4+</div><div class="hero-stat-label">Years industry</div></div>
-        <div><div class="hero-stat-num">3</div><div class="hero-stat-label">Publications</div></div>
-        <div><div class="hero-stat-num">1</div><div class="hero-stat-label">Patent</div></div>
+        <div><div class="hero-stat-num">4</div><div class="hero-stat-label">Publications</div></div>
+        <div><div class="hero-stat-num">1</div><div class="hero-stat-label">Patent application</div></div>
       </div>
       <div class="hero-ctas">
         <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#105;&#116;&#105;&#107;&#97;&#46;&#97;&#103;&#97;&#49;&#57;&#57;&#56;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" class="btn-p">Get in touch</a>
@@ -264,21 +308,106 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
   <div class="scroll-line" aria-hidden="true"><span class="scroll-text">Scroll to explore</span></div>
 </section>
 
+<!-- ═══ CREDIBILITY STRIP ═══ -->
+<div class="cred">
+  <div class="cred-inner">
+    <div class="cred-eyebrow">Selected highlights</div>
+    <div class="cred-grid reveal">
+      <div class="cred-item">
+        <div class="cred-item-top">Wharton <em>AI-PMT</em></div>
+        <div class="cred-item-label">AI Product Manager Fellow, competitive Spring '26 cohort</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-item-top">5,500 <em>applicants</em></div>
+        <div class="cred-item-label">Hack-Nation Global AI Hackathon team, selected across 125 countries</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-item-top">Patent <em>application</em></div>
+        <div class="cred-item-label">ML for Parkinson's, filed with the Indian Patent Office</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-item-top">4 <em>research outputs</em></div>
+        <div class="cred-item-label">Two peer-reviewed papers (one first-authored), a review article, and a poster</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-item-top">HEST <em>National Scholar</em></div>
+        <div class="cred-item-label">Plus a full Amity tuition scholarship and a 50% Blue Bells scholarship</div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-item-top">EMEA <em>award</em></div>
+        <div class="cred-item-label">VMware "At Our Best" recognition, with top CSAT and closure rates</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ABOUT ═══ -->
+<div class="section-block" id="about">
+  <div class="chapter">
+    <div class="chapter-left"><span class="chapter-num">01</span><span class="chapter-name">About &amp; <em>My Why</em></span></div>
+    <span class="chapter-desc">Why AI and health · how I like to work</span>
+  </div>
+  <div class="sec">
+    <div class="about-grid reveal">
+      <div class="about-main">
+        <p class="about-lead">I build and evaluate AI products, turning messy real-world data into tools people can actually trust.</p>
+        <p class="about-body">When I was ten, I read about a pancreatic cancer vaccine being developed abroad. My father had died of that same cancer, caught too late, on my second birthday. That day I decided I wanted to spend my life working where health, biology, and technology meet. I didn't have the language for it yet, but it has been my north star ever since.</p>
+        <p class="about-body">The path wasn't linear. I wanted to be a genetic engineer, but there weren't many routes into it in India, so I chased the medical entrance exams, didn't get where I hoped, and briefly studied microbiology before realising I couldn't do biology without the math and logic I loved. I landed in computer science on a full scholarship, and slowly saw it was the better door into the same room: I could bring biology and medicine into code instead of the other way around. Then I found machine learning in a summer course and everything clicked.</p>
+        <p class="about-body">Since then the thread hasn't changed. I published research, filed a patent application, and kept picking problems where AI meets health. Along the way I learned something about myself: I back myself to figure things out. I switched fields with a lot of catching up to do. I started in technical support barely knowing what a localhost was, and became a top performer who built the team's first training program. I don't assume I'll be the most prepared person in the room on day one. I just know that if I put my head down, I'll get there, usually further than I expected.</p>
+        <blockquote class="about-quote">In anything that affects real people, a confident wrong answer is worse than an honest "I don't know."</blockquote>
+        <p class="about-body">That is the ethic I build on. I'd rather ship something reliable than something that just looks good on a slide, and it shows up in the work: a no-call option when the genomic evidence is weak, flagging small-sample overfitting instead of publishing a perfect-looking score, evaluation metrics written before the results came in. Today I'm at Penn building and evaluating AI products, and heading toward product roles where AI and health meet.</p>
+      </div>
+      <div class="about-side">
+        <div class="about-card">
+          <div class="about-card-title">How I work</div>
+          <ul class="about-list">
+            <li>Honest metrics over flattering ones</li>
+            <li>Build it, then try hard to break it</li>
+            <li>Write the evaluation before the results</li>
+            <li>Know what happens after it ships</li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <div class="about-card-title">Currently</div>
+          <ul class="about-list">
+            <li>MSE CIS, AI concentration at Penn</li>
+            <li>AI Product Manager Fellow, Wharton AI-PMT</li>
+            <li>Student researcher, Digital Pathology</li>
+            <li>Open to product &amp; ops roles, 2027</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ═══ PROJECTS ═══ -->
 <div class="section-block" id="projects">
   <div class="chapter">
-    <div class="chapter-left"><span class="chapter-num">01</span><span class="chapter-name">Work &amp; <em>Projects</em></span></div>
-    <span class="chapter-desc">6 projects · AI product, ML research, data engineering, bioinformatics, community infrastructure</span>
+    <div class="chapter-left"><span class="chapter-num">02</span><span class="chapter-name">Work &amp; <em>Projects</em></span></div>
+    <span class="chapter-desc">9 projects · AI product, ML research, data engineering, bioinformatics, systems, community infrastructure</span>
   </div>
   <div class="sec">
     <div class="proj-grid reveal">
 
-      <a class="proj-card featured" href="https://github.com/whartonAIclub/penn-tools" target="_blank" rel="noopener">
+      <a class="proj-card featured" href="https://genomefirewall-fn6vvubbx9k2lkn6guvdsr.streamlit.app" target="_blank" rel="noopener">
         <div class="proj-num">01</div>
+        <div class="proj-type">AI/ML · Bioinformatics · Live Demo</div>
+        <div class="proj-name">Genome Firewall <span class="proj-live">Live Demo ↗</span></div>
+        <div class="proj-status">Hack-Nation Global AI Hackathon, Jul 2026 · team selected from 5,500 applications across 125 countries</div>
+        <p class="proj-desc">An ML system that predicts which antibiotics will fail against an infection from an assembled bacterial genome, before lab results come back one to three days later. I built the data and genome-to-features pipeline: AMRFinderPlus encodes resistance genes and point mutations as interpretable binary features, training data is filtered down to lab-verified labels only, and evaluation uses MinHash/Jaccard cluster-level splitting so near-identical genomes can't leak across the split. Designed around honesty: calibrated confidence, a no-call option when evidence is weak, and a rule that every failure prediction has to cite a detected determinant.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Machine Learning</span><span class="proj-tag">Bioinformatics</span><span class="proj-tag">Streamlit</span><span class="proj-tag">Feature Engineering</span></div>
+          <span class="proj-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="proj-card featured" href="https://penn-tools.vercel.app/tools/8" target="_blank" rel="noopener">
+        <div class="proj-num">02</div>
         <div class="proj-type">AI Product · Live</div>
-        <div class="proj-name">Career Canvas — Ask Penn Platform</div>
-        <div class="proj-status">Active — Wharton AI-PMT, UPenn</div>
-        <p class="proj-desc">An AI-powered academic and career planning platform launching on Penn's Ask Penn student tools platform. Designed and leading end-to-end development — covering user profile extraction, skill gap analysis, academic planning, and LLM-driven personalised recommendations. Also a maintainer on the broader Ask Penn platform.</p>
+        <div class="proj-name">Career Canvas <span class="proj-live">Live Demo ↗</span></div>
+        <div class="proj-status live">Active · Wharton AI-PMT, UPenn</div>
+        <p class="proj-desc">An AI-powered course, major, and career planning tool built and launched through the Wharton AI-PMT fellowship. I proposed it and lead development end to end, covering product strategy, the mini-PRD, and building and evaluating the AI workflows behind profile extraction, skill gap analysis, and personalised recommendations. Also a maintainer on the broader Ask Penn platform.</p>
         <div class="proj-foot">
           <div class="proj-tags"><span class="proj-tag">LLMs</span><span class="proj-tag">Prompt Engineering</span><span class="proj-tag">Product Strategy</span><span class="proj-tag">Python</span><span class="proj-tag">API Integration</span></div>
           <span class="proj-arrow">↗</span>
@@ -286,57 +415,84 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
       </a>
 
       <div class="proj-card featured">
-        <div class="proj-num">02</div>
+        <div class="proj-num">03</div>
+        <div class="proj-type">LLMs · Fine-tuning · Evaluation</div>
+        <div class="proj-name">Dorm Chef</div>
+        <div class="proj-status">CIS 5270 Trustworthy ML, UPenn</div>
+        <p class="proj-desc">A fine-tuned LLM (SFT plus DPO) for constraint-following recipe generation, working within the ingredients you actually have and a 10 to 15 minute cook time. Built a 2,000-sample synthetic data pipeline with LLM-as-judge filtering, designed both hard and soft evaluation metrics, and ran a six-config hyperparameter sweep against a zero-shot baseline. The finding I care about most: focused fine-tuning bought consistency, and saying that honestly mattered more than chasing a headline accuracy number.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">LLMs</span><span class="proj-tag">SFT · DPO</span><span class="proj-tag">Synthetic Data</span><span class="proj-tag">Model Evaluation</span><span class="proj-tag">Python</span></div>
+          <span class="proj-note">Code available on request</span>
+        </div>
+      </div>
+
+      <div class="proj-card featured">
+        <div class="proj-num">04</div>
         <div class="proj-type">Research · Data Engineering</div>
         <div class="proj-name">Histology Image Compression</div>
-        <div class="proj-status">Active — UPenn Perelman SOM</div>
-        <p class="proj-desc">Scalable tile-based pipelines for multi-gigapixel whole-slide TIFF images. Replication study comparing JPEG, JPEG 2000, and JPEG XL codecs — evaluating quality trade-offs using SSIM for clinical storage optimisation.</p>
+        <div class="proj-status live">Active · UPenn Perelman SOM</div>
+        <p class="proj-desc">Scalable tile-based pipelines for multi-gigapixel whole-slide TIFF images. A replication study comparing JPEG, JPEG 2000, and JPEG XL codecs, evaluating quality trade-offs using SSIM to optimise clinical storage without giving up diagnostic quality.</p>
         <div class="proj-foot">
           <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Pipelines</span><span class="proj-tag">Medical Imaging</span></div>
         </div>
       </div>
 
       <a class="proj-card featured" href="https://github.com/iscss" target="_blank" rel="noopener">
-        <div class="proj-num">03</div>
+        <div class="proj-num">05</div>
         <div class="proj-type">Web Infrastructure · Community</div>
-        <div class="proj-name">ISCSS — International Society for Computational Social Science</div>
-        <div class="proj-status">Active — CSS Lab, UPenn</div>
-        <p class="proj-desc">Overseeing website and deployment for the entire ISCSS organisation, including the IC2S2 annual conference platform. Manages GitHub workflows, Netlify deployments, and job board systems for a global academic audience.</p>
+        <div class="proj-name">ISCSS Platform</div>
+        <div class="proj-status live">Active · CSS Lab, UPenn</div>
+        <p class="proj-desc">Website and deployment for the International Society for Computational Social Science, including the IC2S2 annual conference platform. Built the events page and jobs board from scratch in TypeScript with an AI-assisted workflow, and manage GitHub workflows and Netlify deployments for a global academic audience.</p>
         <div class="proj-foot">
-          <div class="proj-tags"><span class="proj-tag">Netlify</span><span class="proj-tag">GitHub</span><span class="proj-tag">DevOps</span></div>
+          <div class="proj-tags"><span class="proj-tag">TypeScript</span><span class="proj-tag">Netlify</span><span class="proj-tag">GitHub</span><span class="proj-tag">UI/UX</span></div>
           <span class="proj-arrow">↗</span>
         </div>
       </a>
 
       <a class="proj-card" href="https://github.com/Riaga1998/Gemz" target="_blank" rel="noopener">
-        <div class="proj-num">04</div>
+        <div class="proj-num">06</div>
         <div class="proj-type">ML Research · Healthcare</div>
         <div class="proj-name">Gemcitabine Resistance Prediction</div>
-        <p class="proj-desc">End-to-end ML pipeline for chemotherapy resistance in pancreatic cancer. Beam-search feature selection + SVMs on 1,527-feature genomic data — 4-gene biomarker panel, AUC = 1.00 across 50 cross-validation runs.</p>
+        <div class="proj-status">CIS 5200, UPenn</div>
+        <p class="proj-desc">ML predicting gemcitabine chemotherapy resistance in pancreatic cancer from GDSC genomic mutation data. Evaluated five algorithms under 10x5-fold cross-validation, with beam-search feature selection narrowing things to a compact four-gene panel. The scores came out near-perfect, which on a sample this small is a warning sign rather than a result, so the write-up flags the overfitting risk instead of claiming the number.</p>
         <div class="proj-foot">
-          <div class="proj-tags"><span class="proj-tag">SVM</span><span class="proj-tag">XGBoost</span><span class="proj-tag">Genomics</span></div>
+          <div class="proj-tags"><span class="proj-tag">SVM</span><span class="proj-tag">Feature Selection</span><span class="proj-tag">Genomics</span><span class="proj-tag">Precision Medicine</span></div>
           <span class="proj-arrow">↗</span>
         </div>
       </a>
 
-      <a class="proj-card" href="https://github.com/Riaga1998/LDopa" target="_blank" rel="noopener">
-        <div class="proj-num">05</div>
-        <div class="proj-type">ML · Patent · Publication</div>
-        <div class="proj-name">L-Dopa Response Prediction — Parkinson's</div>
-        <p class="proj-desc">Supervised ML model predicting levodopa treatment response using clinical and wearable sensor data. ~89% classification accuracy. Led to a journal article, review article, and a granted patent — full end-to-end AI for clinical decision support.</p>
+      <div class="proj-card">
+        <div class="proj-num">07</div>
+        <div class="proj-type">Systems · C</div>
+        <div class="proj-name">PennOS</div>
+        <div class="proj-status">CIS 5480, UPenn · 4-person team</div>
+        <p class="proj-desc">A UNIX-like operating system simulator written in C: a priority scheduler, a FAT file system, and a shell with job control. I contributed across the kernel, filesystem, and shell, and did a lot of the integration work that made the three pieces behave as one system.</p>
         <div class="proj-foot">
-          <div class="proj-tags"><span class="proj-tag">Clinical ML</span><span class="proj-tag">Feature Engineering</span><span class="proj-tag">Sensor Data</span><span class="proj-tag">Patent</span><span class="proj-tag">Published</span></div>
+          <div class="proj-tags"><span class="proj-tag">C</span><span class="proj-tag">Operating Systems</span><span class="proj-tag">Systems Programming</span></div>
+          <span class="proj-note">Code private per course policy</span>
+        </div>
+      </div>
+
+      <a class="proj-card" href="https://www.tandfonline.com/doi/full/10.1080/08839514.2021.1975881" target="_blank" rel="noopener">
+        <div class="proj-num">08</div>
+        <div class="proj-type">ML · Patent Application · Publication</div>
+        <div class="proj-name">L-Dopa Response Prediction</div>
+        <div class="proj-status">Major project · Amity University</div>
+        <p class="proj-desc">A supervised ML model predicting levodopa treatment response in Parkinson's from clinical and wearable sensor data, reaching roughly 89% classification accuracy. The work led to a journal article, a review article, and a published patent application, taking one clinical question all the way from raw sensor data to filed IP.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">Clinical ML</span><span class="proj-tag">Feature Engineering</span><span class="proj-tag">Sensor Data</span><span class="proj-tag">Published</span></div>
           <span class="proj-arrow">↗</span>
         </div>
       </a>
 
       <a class="proj-card" href="https://scholar.google.com/citations?user=a_FAQb8AAAAJ&hl=en" target="_blank" rel="noopener">
-        <div class="proj-num">06</div>
+        <div class="proj-num">09</div>
         <div class="proj-type">Bioinformatics · Publication</div>
-        <div class="proj-name">Genome-wide MicroRNA — Brassica</div>
-        <p class="proj-desc">Computational genomics study of microRNA evolution across Brassica species. Led multi-institutional collaboration between Amity &amp; JNU. Contributed to a peer-reviewed publication.</p>
+        <div class="proj-name">Brassica miRNA Evolution</div>
+        <div class="proj-status">Research internship · JNU</div>
+        <p class="proj-desc">Computational genomics tracing the evolution of the MIR156 and MIR172 microRNA families across five Brassica species using BLAST and MEGA phylogenetics. Led the multi-institutional data integration between Amity and JNU, and co-authored the resulting peer-reviewed publication as the only intern on it.</p>
         <div class="proj-foot">
-          <div class="proj-tags"><span class="proj-tag">BLAST</span><span class="proj-tag">MEGA v7</span><span class="proj-tag">Genomics</span></div>
+          <div class="proj-tags"><span class="proj-tag">BLAST</span><span class="proj-tag">MEGA v7</span><span class="proj-tag">Phylogenetics</span></div>
           <span class="proj-arrow">↗</span>
         </div>
       </a>
@@ -348,7 +504,7 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
 <!-- ═══ EXPERIENCE ═══ -->
 <div class="section-block" id="experience">
   <div class="chapter">
-    <div class="chapter-left"><span class="chapter-num">02</span><span class="chapter-name">Work <em>Experience</em></span></div>
+    <div class="chapter-left"><span class="chapter-num">03</span><span class="chapter-name">Work <em>Experience</em></span></div>
     <span class="chapter-desc">4+ years industry · VMware / Omnissa, EY, UPenn research labs</span>
   </div>
   <div class="sec">
@@ -358,7 +514,8 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
         <div class="tl-left"><div class="tl-period">Mar 2026 – Present</div></div>
         <div class="tl-right">
           <div class="tl-role">Student Researcher</div>
-          <div class="tl-org">Digital Pathology Research Lab · University of Pennsylvania</div>
+          <div class="tl-org has-scope">Digital Pathology Research Lab · University of Pennsylvania</div>
+          <div class="tl-scope">Medical imaging · ML pipelines at gigapixel scale</div>
           <ul class="tl-pts">
             <li>Building tile-based data pipelines for multi-gigapixel whole-slide histology images (TIFF).</li>
             <li>Replication study comparing JPEG, JPEG 2000, and JPEG XL compression codecs for clinical digital pathology.</li>
@@ -371,10 +528,11 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
         <div class="tl-left"><div class="tl-period">Feb 2026 – Present</div></div>
         <div class="tl-right">
           <div class="tl-role">AI Product Manager Fellow</div>
-          <div class="tl-org">Wharton AI-PMT · The Wharton School, UPenn</div>
+          <div class="tl-org has-scope">Wharton AI-PMT · The Wharton School, UPenn</div>
+          <div class="tl-scope">AI product management · strategy and evaluation</div>
           <ul class="tl-pts">
             <li>Selected for a competitive cohort designing and launching AI products with Wharton MBAs and engineers.</li>
-            <li>Proposed and leading Career Canvas — an LLM-driven academic and career planning tool for Penn students.</li>
+            <li>Proposed and leading Career Canvas, an LLM-driven academic and career planning tool for Penn students.</li>
             <li>Defined product vision, user flows, and feature roadmap; driving execution across engineering and design tracks.</li>
           </ul>
         </div>
@@ -384,10 +542,12 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
         <div class="tl-left"><div class="tl-period">Feb 2026 – Present</div></div>
         <div class="tl-right">
           <div class="tl-role">Research Assistant &amp; Events Coordinator</div>
-          <div class="tl-org">Computational Social Science Lab · University of Pennsylvania</div>
+          <div class="tl-org has-scope">Computational Social Science Lab · University of Pennsylvania</div>
+          <div class="tl-scope">Web platform build · TypeScript and UI/UX</div>
           <ul class="tl-pts">
+            <li>Built the events page and jobs board from scratch in TypeScript using an AI-assisted workflow, covering UI/UX end to end.</li>
             <li>Overseeing website and deployment infrastructure for the entire ISCSS organisation.</li>
-            <li>Maintaining IC2S2 conference platform via Netlify and GitHub — branch management, version control, deployment pipelines.</li>
+            <li>Maintaining IC2S2 conference platform via Netlify and GitHub, covering branch management, version control, and deployment pipelines.</li>
             <li>Analysing engagement data to improve outreach strategy and platform usability.</li>
           </ul>
         </div>
@@ -396,26 +556,58 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
       <div class="tl-row">
         <div class="tl-left"><div class="tl-period">Sep 2024 – Jul 2025</div></div>
         <div class="tl-right">
-          <div class="tl-role">Engineer L-2</div>
-          <div class="tl-org ext">Omnissa (formerly VMware) · Bengaluru, India</div>
+          <div class="tl-role">Technical Support Engineer L2</div>
+          <div class="tl-org ext has-scope">Omnissa (VMware EUC spinoff) · Bengaluru, India</div>
+          <div class="tl-scope">Enterprise SaaS · IAM and identity at scale</div>
           <ul class="tl-pts">
-            <li>Continued L2 engineering post-VMware spinoff; specialising in VMware Workspace ONE product suite — UEM, Access, and Intelligence.</li>
-            <li>Supporting enterprise IAM, cloud authentication, and identity systems at scale across global enterprise clients.</li>
+            <li>Retained through the spinoff when VMware's End-User Computing division became Omnissa, continuing as L2 on the full Workspace ONE suite without a break in ownership.</li>
+            <li>Kept owning high-stakes enterprise accounts including KPMG, PwC, Walmart, BMW, Shell, and Schindler through a period of significant organisational change.</li>
+            <li>Partnered with engineering and product on critical bugs and time-sensitive escalations, turning customer pain points into shipped fixes.</li>
+            <li>Continued as SME and escalation engineer for enterprise IAM, cloud authentication, and identity systems across global clients.</li>
           </ul>
         </div>
       </div>
 
       <div class="tl-row">
-        <div class="tl-left"><div class="tl-period">Mar 2021 – Aug 2024</div></div>
+        <div class="tl-left"><div class="tl-period">Feb 2023 – Aug 2024</div></div>
         <div class="tl-right">
-          <div class="tl-role">Technical Support Engineer L1 → L2</div>
-          <div class="tl-org ext">VMware · Bengaluru, India</div>
+          <div class="tl-role">Technical Support Engineer L2</div>
+          <div class="tl-org ext has-scope">VMware · Bengaluru, India</div>
+          <div class="tl-scope">Enterprise SaaS · product ownership and enablement</div>
           <ul class="tl-pts">
-            <li>Advanced technical support for VMware Workspace ONE UEM, Access, and Intelligence — specialising in cloud-based authentication, IAM, and SSO/MFA across large-scale enterprise environments.</li>
-            <li>Diagnosed and resolved 15+ complex incidents weekly using root-cause analysis on system logs, API interactions, and cloud configurations.</li>
-            <li>Maintained 100% customer satisfaction across complex enterprise accounts.</li>
-            <li>Designed and led hands-on technical training for 20+ engineers across the EMEA region.</li>
-            <li>Received VMware "At Our Best" Award (Workspace ONE EMEA) for high customer satisfaction and rapid issue resolution, Aug 2021.</li>
+            <li>Spotted a gap in onboarding and built the team's first structured training program from scratch, designing the curriculum, piloting it, and training new engineers on a genuinely complex enterprise product.</li>
+            <li>Earned exclusive EMEA-wide database access as the only engineer to pass the required certification, becoming the team's go-to for data-driven problem solving.</li>
+            <li>Owned high-stakes enterprise accounts including KPMG, PwC, Walmart, BMW, Shell, and Schindler, managing critical escalations end to end.</li>
+            <li>Consistently delivered the team's highest CSAT and closure rates, and took on SME and escalation-engineer duties mentoring new joiners.</li>
+            <li>Product expert across the full Workspace ONE SaaS suite (UEM, Intelligence, Access, CSP), specialising in authentication, MDM, and identity and access management.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-left"><div class="tl-period">Sep 2021 – Jan 2023</div></div>
+        <div class="tl-right">
+          <div class="tl-role">Technical Support Engineer L1</div>
+          <div class="tl-org ext has-scope">VMware · Bengaluru, India</div>
+          <div class="tl-scope">Enterprise SaaS · authentication and SSO</div>
+          <ul class="tl-pts">
+            <li>Started partnering with senior engineers on complex problems, translating customer pain points into clear, actionable technical feedback.</li>
+            <li>Delivered strong CSAT and closure rates, laying the groundwork for the SME, training, and product-facing work I picked up at L2.</li>
+            <li>Handled escalated issues across the Workspace ONE SaaS suite, building deep product knowledge of authentication, SSO, and enterprise access workflows.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-left"><div class="tl-period">Mar – Aug 2021</div></div>
+        <div class="tl-right">
+          <div class="tl-role">Associate Engineer</div>
+          <div class="tl-org ext has-scope">VMware · Bengaluru, India</div>
+          <div class="tl-scope">Enterprise SaaS · first engineering role</div>
+          <ul class="tl-pts">
+            <li>Recognised early by leadership through VMware's "At Our Best" program for contributions to customers and the team.</li>
+            <li>Moved quickly from onboarding to consistent, high-quality issue resolution, establishing the track record that drove promotion to L1 within six months.</li>
+            <li>Joined supporting the Workspace ONE enterprise SaaS platform, building product depth and problem-solving skills from the ground up.</li>
           </ul>
         </div>
       </div>
@@ -424,10 +616,14 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
         <div class="tl-left"><div class="tl-period">Oct 2020 – Mar 2021</div></div>
         <div class="tl-right">
           <div class="tl-role">Analyst</div>
-          <div class="tl-org ext">EY LLP · Gurugram, India</div>
+          <div class="tl-org ext has-scope">EY LLP · Gurugram, India</div>
+          <div class="tl-scope">Consulting · master data management</div>
           <ul class="tl-pts">
-            <li>Led end-to-end development of a Master Data Management tool, reducing client onboarding time by 20%.</li>
-            <li>Translated client business requirements into scalable data solutions; delivered stakeholder-facing documentation and presentations.</li>
+            <li>Worked the Welspun engagement building a Master Data Management platform, after training in Power BI, data schemas, and data modelling.</li>
+            <li>Managed data through a full dev, QA, and production workflow: streamlining lookup values, validating platform integrity, running QA testing with the client, and supporting releases. Cut client onboarding time by 20%.</li>
+            <li>Studied the client's data schemas so the tool was designed around how their data actually flowed.</li>
+            <li>Wrote end-to-end documentation, SOPs, and a user guide, and demoed the platform to client stakeholders regularly.</li>
+            <li>Trained and supported new joiners as they ramped on the tool.</li>
           </ul>
         </div>
       </div>
@@ -436,7 +632,8 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
         <div class="tl-left"><div class="tl-period">Jun – Jul 2020</div></div>
         <div class="tl-right">
           <div class="tl-role">Intern &amp; Trainee</div>
-          <div class="tl-org ext">Allsoft Solutions &amp; Services · Gurugram, India</div>
+          <div class="tl-org ext has-scope">Allsoft Solutions &amp; Services · Gurugram, India</div>
+          <div class="tl-scope">Machine learning training with IBM</div>
           <ul class="tl-pts">
             <li>Six-week industry training in Machine Learning with Allsoft Solutions in collaboration with IBM.</li>
             <li>Built industry projects in Python: Real Estate Price Prediction, movie recommendation system, stock market analysis, and image classification.</li>
@@ -449,10 +646,25 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
         <div class="tl-left"><div class="tl-period">May – Jul 2019</div></div>
         <div class="tl-right">
           <div class="tl-role">Research Intern</div>
-          <div class="tl-org ext">Jawaharlal Nehru University · New Delhi, India</div>
+          <div class="tl-org ext has-scope">Jawaharlal Nehru University · New Delhi, India</div>
+          <div class="tl-scope">Computational genomics · phylogenetics</div>
           <ul class="tl-pts">
-            <li>Computational genomics research on microRNA evolution using BLAST and MEGA v7; co-authored publication as sole intern.</li>
-            <li>Led multi-institutional data integration between Amity University and JNU for genome-wide analysis.</li>
+            <li>Summer research at the School of Computational &amp; Integrative Sciences on the evolution of the MIR156 and MIR172 microRNA families across Brassica species.</li>
+            <li>Independently learned and ran the full bioinformatics pipeline, from sequence extraction to phylogenetic analysis with BLAST and MEGA, largely self-directing the work.</li>
+            <li>Analysed miRNA conservation and chromosomal distribution across five Brassica genomes, identifying evolutionary patterns.</li>
+            <li>Extended the work into a peer-reviewed publication in the Research Journal of Biotechnology (2021), as the only intern on it.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-left"><div class="tl-period">May – Jul 2018</div></div>
+        <div class="tl-right">
+          <div class="tl-role">Python &amp; Data Science Intern</div>
+          <div class="tl-org ext has-scope">AAM Infotech · Gurugram, India</div>
+          <div class="tl-scope">Python and data science fundamentals</div>
+          <ul class="tl-pts">
+            <li>An early hands-on internship in Python and data science fundamentals, building the programming and data-analysis base everything since has rested on.</li>
           </ul>
         </div>
       </div>
@@ -464,15 +676,15 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
 <!-- ═══ RESEARCH ═══ -->
 <div class="section-block" id="research">
   <div class="chapter">
-    <div class="chapter-left"><span class="chapter-num">03</span><span class="chapter-name">Research <em>&amp; IP</em></span></div>
-    <span class="chapter-desc">3 publications · 1 patent · peer reviewer</span>
+    <div class="chapter-left"><span class="chapter-num">04</span><span class="chapter-name">Research <em>&amp; IP</em></span></div>
+    <span class="chapter-desc">4 publications · 1 patent application · peer reviewer</span>
   </div>
   <div class="sec">
     <div class="pub-list reveal">
       <a class="pub-row" href="https://www.journalajrcos.com" target="_blank" rel="noopener">
         <div class="pub-index">01</div>
         <div class="pub-body">
-          <div class="pub-title">Peer Reviewer — Asian Journal of Research in Computer Science</div>
+          <div class="pub-title">Peer Reviewer, Asian Journal of Research in Computer Science</div>
           <div class="pub-meta">Invited manuscript peer review <span class="pub-year">Feb 2025</span> <span class="pub-badge">Reviewer</span></div>
         </div>
         <div class="pub-ext">↗</div>
@@ -480,8 +692,8 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
       <a class="pub-row" href="https://scholar.google.com/citations?user=a_FAQb8AAAAJ&hl=en" target="_blank" rel="noopener">
         <div class="pub-index">02</div>
         <div class="pub-body">
-          <div class="pub-title">A system and method of L-DOPA response prediction for Parkinson's Disease using a Machine Learning approach</div>
-          <div class="pub-meta">Granted Patent · Applied ML <span class="pub-year">Oct 2021</span> <span class="pub-badge pat">Patent</span></div>
+          <div class="pub-title">A System and Method of L-Dopa Response Prediction for Parkinson's Disease Using ML Approach</div>
+          <div class="pub-meta">Published patent application · Indian Patent Office · App# 202011015184 A <span class="pub-year">Oct 2021</span> <span class="pub-badge pat">Patent Application</span></div>
         </div>
         <div class="pub-ext">↗</div>
       </a>
@@ -497,7 +709,7 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
         <div class="pub-index">04</div>
         <div class="pub-body">
           <div class="pub-title">Parkinson's Disorder: Taking a step towards homogenizing machine learning and medical science</div>
-          <div class="pub-meta">International Journal of Psychosocial Rehabilitation · Vol 24, Issue 04 <span class="pub-year">2020</span> <span class="pub-badge">Review</span></div>
+          <div class="pub-meta">International Journal of Psychosocial Rehabilitation · Vol 24, Issue 04 · First author <span class="pub-year">2020</span> <span class="pub-badge">Review</span></div>
         </div>
         <div class="pub-ext">↗</div>
       </a>
@@ -505,7 +717,15 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
         <div class="pub-index">05</div>
         <div class="pub-body">
           <div class="pub-title">Genome-wide evolutionary analysis of precursor sequences of MIR156 and MIR172 family members in Brassica species</div>
-          <div class="pub-meta">Bioinformatics · JNU collaboration <span class="pub-year">2020</span> <span class="pub-badge">Journal</span></div>
+          <div class="pub-meta">Research Journal of Biotechnology · JNU collaboration <span class="pub-year">2021</span> <span class="pub-badge">Journal</span></div>
+        </div>
+        <div class="pub-ext">↗</div>
+      </a>
+      <a class="pub-row" href="https://scholar.google.com/citations?user=a_FAQb8AAAAJ&hl=en" target="_blank" rel="noopener">
+        <div class="pub-index">06</div>
+        <div class="pub-body">
+          <div class="pub-title">Wi-Vi (Wireless Vision): Seeing Through Walls Using Wi-Fi Signals</div>
+          <div class="pub-meta">Student poster · AmiFest <span class="pub-year">2018</span> <span class="pub-badge">Poster</span></div>
         </div>
         <div class="pub-ext">↗</div>
       </a>
@@ -516,7 +736,7 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
 <!-- ═══ SKILLS ═══ -->
 <div class="section-block" id="skills">
   <div class="chapter">
-    <div class="chapter-left"><span class="chapter-num">04</span><span class="chapter-name">Technical <em>Skills</em></span></div>
+    <div class="chapter-left"><span class="chapter-num">05</span><span class="chapter-name">Technical <em>Skills</em></span></div>
     <span class="chapter-desc">Python · SQL · ML · LLMs · Cloud · IAM · Product</span>
   </div>
   <div class="sec">
@@ -547,7 +767,7 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
       </div>
       <div class="skill-group" style="grid-column:1/-1;background:#fdf6fb">
         <div class="skill-group-title">Spoken Languages</div>
-        <div class="skill-pills"><span class="skill-pill">English — Proficient</span><span class="skill-pill">Hindi — Proficient</span><span class="skill-pill">French — Intermediate</span></div>
+        <div class="skill-pills"><span class="skill-pill">English: Proficient</span><span class="skill-pill">Hindi: Proficient</span><span class="skill-pill">French: Intermediate</span></div>
       </div>
     </div>
   </div>
@@ -556,11 +776,19 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
 <!-- ═══ AWARDS ═══ -->
 <div class="section-block" id="awards">
   <div class="chapter">
-    <div class="chapter-left"><span class="chapter-num">05</span><span class="chapter-name">Honours <em>&amp; Awards</em></span></div>
+    <div class="chapter-left"><span class="chapter-num">06</span><span class="chapter-name">Honours <em>&amp; Awards</em></span></div>
     <span class="chapter-desc">HEST National Scholar · Patent · VMware award · Scholarships</span>
   </div>
   <div class="sec">
     <div class="awards-list reveal">
+      <div class="award-row">
+        <div><div class="award-name">Forerunner Student Leader</div><div class="award-desc">Selected by Penn Global ISSS to mentor incoming international students through their transition to Penn.</div></div>
+        <div class="award-year">2026</div>
+      </div>
+      <div class="award-row">
+        <div><div class="award-name">Founder, Conscious Living Club at Penn</div><div class="award-desc">Founded and run a student club at Penn in partnership with ISKCON Philadelphia.</div></div>
+        <div class="award-year">2026</div>
+      </div>
       <div class="award-row">
         <div><div class="award-name">HEST National Scholar</div><div class="award-desc">Selected among top students in India through a competitive multi-stage national evaluation.</div></div>
         <div class="award-year">2025</div>
@@ -574,7 +802,7 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
         <div class="award-year">2023</div>
       </div>
       <div class="award-row">
-        <div><div class="award-name">Granted Patent — ML for Parkinson's</div><div class="award-desc">Published patent for L-DOPA response prediction system using machine learning approach.</div></div>
+        <div><div class="award-name">Published Patent Application, ML for Parkinson's</div><div class="award-desc">Patent application for an L-Dopa response prediction system using a machine learning approach, published by the Indian Patent Office (App# 202011015184 A).</div></div>
         <div class="award-year">2021</div>
       </div>
       <div class="award-row">
@@ -584,6 +812,14 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
       <div class="award-row">
         <div><div class="award-name">100% Merit Scholarship</div><div class="award-desc">Full first-year tuition scholarship at Amity University Haryana for exceptional high school academic performance.</div></div>
         <div class="award-year">2016</div>
+      </div>
+      <div class="award-row">
+        <div><div class="award-name">50% Merit Scholarship</div><div class="award-desc">Awarded at Blue Bells Model Senior Secondary School for academic performance.</div></div>
+        <div class="award-year">2014</div>
+      </div>
+      <div class="award-row">
+        <div><div class="award-name">1st Place, Silverzone Mathematics Olympiad</div><div class="award-desc">First place in the International Olympiad of Mathematics.</div></div>
+        <div class="award-year">2013</div>
       </div>
     </div>
 
@@ -595,8 +831,8 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
           <div class="tl-role">Master of Science in Engineering, Computer &amp; Information Science</div>
           <div class="tl-org">University of Pennsylvania, School of Engineering and Applied Science</div>
           <ul class="tl-pts">
-            <li>Concentration: Artificial Intelligence</li>
-            <li>Coursework: Machine Learning, Algorithms for Big Data, Trustworthy ML, Foundations of AI: Deep Learning</li>
+            <li>Concentration: Artificial Intelligence · GPA 3.57/4.00</li>
+            <li>Coursework: Machine Learning, Algorithms for Big Data, Trustworthy ML, Foundations of AI: Deep Learning, Operating Systems</li>
           </ul>
         </div>
       </div>
@@ -606,11 +842,30 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
           <div class="tl-role">Bachelor of Technology, Computer Science &amp; Engineering</div>
           <div class="tl-org ext">Amity University Haryana · Gurugram, India</div>
           <ul class="tl-pts">
-            <li>Minor Degree in Data Analytics</li>
+            <li>Minor Degree in Data Analytics · GPA 3.64/4.00 · one patent application and two publications from undergraduate research</li>
             <li>Coursework: Artificial Intelligence, Genetic Algorithms, Soft Computing, Statistics &amp; Statistical Quality Control</li>
             <li>Shree Baljit Shastri Award recipient for outstanding undergraduate contributions</li>
           </ul>
         </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-left"><div class="tl-period">Until 2016</div></div>
+        <div class="tl-right">
+          <div class="tl-role">High School, Science</div>
+          <div class="tl-org ext">Blue Bells Model Senior Secondary School · Gurugram, India</div>
+          <ul class="tl-pts">
+            <li>93.2% in Class 12, taking all four sciences across both the PCM and PCB streams</li>
+            <li>50% merit scholarship · 1st place in the Silverzone International Olympiad of Mathematics</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-eyebrow reveal">Certifications</div>
+    <div class="skills-outer reveal">
+      <div class="skill-group" style="grid-column:1/-1">
+        <div class="skill-group-title">IBM Career Education Program &amp; other coursework</div>
+        <div class="skill-pills"><span class="skill-pill">Machine Learning with Python (IBM)</span><span class="skill-pill">Python for Data Science</span><span class="skill-pill">Data Science Foundations, Level 2</span><span class="skill-pill">Deep Learning using TensorFlow</span><span class="skill-pill">Statistics 101</span><span class="skill-pill">R Essentials</span><span class="skill-pill">Data Visualization</span><span class="skill-pill">Data Analysis</span></div>
       </div>
     </div>
   </div>
@@ -619,7 +874,7 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
 <!-- ═══ VOLUNTEERING ═══ -->
 <div class="section-block" id="volunteering">
   <div class="chapter">
-    <div class="chapter-left"><span class="chapter-num">06</span><span class="chapter-name">Volunteering <em>&amp; Co-curricular</em></span></div>
+    <div class="chapter-left"><span class="chapter-num">07</span><span class="chapter-name">Volunteering <em>&amp; Co-curricular</em></span></div>
     <span class="chapter-desc">Community teaching · mentoring · student organisations · social impact</span>
   </div>
   <div class="sec">
@@ -633,7 +888,7 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
       </div>
 
       <div class="vol-card">
-        <div class="vol-name">FIFE Academy — Technical Instructor</div>
+        <div class="vol-name">FIFE Academy, Technical Instructor</div>
         <div class="vol-role">Instructor</div>
         <div class="vol-period">Philadelphia, PA</div>
         <p class="vol-desc">Instructor at FIFE Academy, delivering technical courses for students. Focused on building foundational skills and applied knowledge through structured curriculum and hands-on learning.</p>
@@ -643,18 +898,18 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
         <div class="vol-name">IIT Delhi Co-Design Workshop</div>
         <div class="vol-role">Participant</div>
         <div class="vol-period">Oct 2024 · New Delhi, India</div>
-        <p class="vol-desc">Participated in the Co-Design Workshop titled "Gendered Approach for Addressing Adaptation Capacity to Hot Weather Conditions" by the Transport Research and Injury Prevention Center at IIT Delhi and HumanQind — a cross-disciplinary initiative bridging public health, urban design, and community research.</p>
+        <p class="vol-desc">Participated in the Co-Design Workshop titled "Gendered Approach for Addressing Adaptation Capacity to Hot Weather Conditions" by the Transport Research and Injury Prevention Center at IIT Delhi and HumanQind, a cross-disciplinary initiative bridging public health, urban design, and community research.</p>
       </div>
 
       <div class="vol-card">
         <div class="vol-name">IC3I International Conference</div>
         <div class="vol-role">Organiser &amp; Volunteer</div>
         <div class="vol-period">Oct 2018 · Amity University Gurugram</div>
-        <p class="vol-desc">Organised and volunteered at the 3rd International Conference on Contemporary Computing and Informatics (IC3I) at Amity University Gurugram — managing logistics, sessions, and attendee coordination for an international academic gathering.</p>
+        <p class="vol-desc">Organised and volunteered at the 3rd International Conference on Contemporary Computing and Informatics (IC3I) at Amity University Gurugram, managing logistics, sessions, and attendee coordination for an international academic gathering.</p>
       </div>
 
       <div class="vol-card">
-        <div class="vol-name">SAKAAR — Social Impact Initiative</div>
+        <div class="vol-name">SAKAAR, Social Impact Initiative</div>
         <div class="vol-role">Volunteer</div>
         <div class="vol-period">Amity University Haryana · 2016 – 2020</div>
         <p class="vol-desc">Active volunteer with SAKAAR, a community outreach and social welfare initiative at Amity University. Participated in and organised activities aimed at community development, awareness, and education for underserved groups.</p>
@@ -662,9 +917,9 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
 
       <div class="vol-card">
         <div class="vol-name">Student Co-curricular Activities</div>
-        <div class="vol-role">Active Participant — Amity University Haryana</div>
+        <div class="vol-role">Active Participant, Amity University Haryana</div>
         <div class="vol-period">Aug 2016 – Sep 2020</div>
-        <p class="vol-desc">Highly active in co-curricular life throughout undergraduate studies — participating in technical competitions, cultural events, and student-led initiatives. Recipient of the Shree Baljit Shastri Award for outstanding undergraduate contributions.</p>
+        <p class="vol-desc">Highly active in co-curricular life throughout undergraduate studies, taking part in technical competitions, cultural events, and student-led initiatives. Recipient of the Shree Baljit Shastri Award for outstanding undergraduate contributions.</p>
       </div>
 
     </div>
@@ -677,7 +932,7 @@ footer{padding:1.75rem 5vw;display:flex;justify-content:space-between;align-item
   <div>
     <div class="contact-eyebrow">Get in touch</div>
     <h2 class="contact-title">Let's build something <em>together</em></h2>
-    <p class="contact-desc">Exploring roles in data engineering, AI/ML, and product. Always happy to talk research, projects, or opportunities.</p>
+    <p class="contact-desc">Looking for product and operations roles where AI meets health, though a good problem in any domain will get my attention. Always happy to talk research, projects, or opportunities.</p>
   </div>
   <div class="contact-right">
     <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#105;&#116;&#105;&#107;&#97;&#46;&#97;&#103;&#97;&#49;&#57;&#57;&#56;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" class="c-btn primary">
@@ -773,7 +1028,7 @@ var chapterObs = new IntersectionObserver(function(entries) {
 }, {threshold: 0.2});
 document.querySelectorAll('.section-block').forEach(function(el) { chapterObs.observe(el); });
 
-var SECTIONS = ['projects','experience','research','skills','awards','volunteering'];
+var SECTIONS = ['about','projects','experience','research','skills','awards','volunteering'];
 
 var revealObs = new IntersectionObserver(function(entries) {
   entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
