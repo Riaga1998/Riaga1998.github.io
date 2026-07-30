@@ -5,10 +5,13 @@ PDFs linked from the portfolio. Filenames are referenced directly in
 
 ## Expected files
 
-| Filename | Reference |
-|---|---|
-| `brassica-mir156-mir172.pdf` | Agarwal R., Dhaka N., Sharma R., Jatain A. "Genome-wide evolutionary analysis of precursor sequences of MIR156 and MIR172 family members in Brassica species." *Research Journal of Biotechnology* 16(4), April 2021, pp 81-92. |
-| `wi-vi-poster.pdf` | "Wi-Vi (Wireless Vision): Seeing Through Walls Using Wi-Fi Signals." Student poster, AmiFest, Amity University, 2018. *(not yet added; the publications row is unlinked until this file exists)* |
+Filenames must be lowercase with hyphens and no spaces, since spaces
+become `%20` in URLs.
+
+| Filename | Status | Reference |
+|---|---|---|
+| `brassica-mir156-mir172.pdf` | present | Agarwal R., Dhaka N., Sharma R., Jatain A. "Genome-wide evolutionary analysis of precursor sequences of MIR156 and MIR172 family members in Brassica species." *Research Journal of Biotechnology* 16(4), April 2021, pp 81-92. |
+| `wi-vi-poster.pdf` | not added | "Wi-Vi (Wireless Vision): Seeing Through Walls Using Wi-Fi Signals." Student poster, AmiFest, Amity University, 2018. The publications row stays unlinked until this file exists. |
 
 ## Adding the Wi-Vi poster
 
