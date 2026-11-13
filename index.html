@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="Ritika Agarwal, From Data to Decisions">
 <meta name="twitter:description" content="I build and evaluate AI products, turning messy real-world data into tools people can actually trust.">
 <meta name="twitter:image" content="https://riaga1998.github.io/preview.png">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -53,15 +53,12 @@
 
 <!-- HERO -->
 <section class="hero">
-  <canvas id="hero-canvas" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.55"></canvas>
-  <div class="hero-deco" aria-hidden="true">RA</div>
+  <div class="hero-shapes" aria-hidden="true"><span class="sh sh-c"></span><span class="sh sh-d"></span></div>
   <div class="hero-meta">
-    <span class="hero-dot"></span>
-    <span class="hero-meta-text">AI · Product · Data · Ops</span>
-    <span class="hero-meta-div"></span>
+    <span class="hero-meta-text">AI Product</span>
+    <span class="hero-meta-text">Wharton AI-PMT Fellow</span>
     <span class="hero-meta-text">UPenn MSE '27</span>
-    <span class="hero-meta-div"></span>
-    <span class="hero-meta-text">Open to roles</span>
+    <span class="hero-meta-text open">Open to product &amp; ops roles</span>
   </div>
   <h1 class="hero-title">From data<br><em>to decisions</em></h1>
   <div class="hero-bottom">
@@ -409,6 +406,10 @@
   <div class="sec">
     <div class="skills-outer reveal">
       <div class="skill-group">
+        <div class="skill-group-title">Product &amp; Strategy</div>
+        <div class="skill-pills"><span class="skill-pill">Product Strategy</span><span class="skill-pill">User Research</span><span class="skill-pill">Roadmapping</span><span class="skill-pill">PRD Writing</span><span class="skill-pill">Stakeholder Comms</span><span class="skill-pill">Cross-functional Teams</span><span class="skill-pill">SDLC</span></div>
+      </div>
+      <div class="skill-group">
         <div class="skill-group-title">Programming &amp; Frameworks</div>
         <div class="skill-pills"><span class="skill-pill">Python</span><span class="skill-pill">SQL</span><span class="skill-pill">C / C++</span><span class="skill-pill">LaTeX</span><span class="skill-pill">Scikit-learn</span><span class="skill-pill">TensorFlow</span><span class="skill-pill">PyTorch</span><span class="skill-pill">Pandas · NumPy</span><span class="skill-pill">OpenCV</span></div>
       </div>
@@ -428,11 +429,7 @@
         <div class="skill-group-title">Tools &amp; Platforms</div>
         <div class="skill-pills"><span class="skill-pill">Git · GitHub</span><span class="skill-pill">Jupyter</span><span class="skill-pill">Netlify</span><span class="skill-pill">JIRA</span><span class="skill-pill">Salesforce</span><span class="skill-pill">Active Directory</span><span class="skill-pill">BLAST · MEGA v7</span><span class="skill-pill">Google Colab</span></div>
       </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Product &amp; Strategy</div>
-        <div class="skill-pills"><span class="skill-pill">Product Strategy</span><span class="skill-pill">User Research</span><span class="skill-pill">Roadmapping</span><span class="skill-pill">PRD Writing</span><span class="skill-pill">Stakeholder Comms</span><span class="skill-pill">Cross-functional Teams</span><span class="skill-pill">SDLC</span></div>
-      </div>
-      <div class="skill-group" style="grid-column:1/-1;background:#fdf6fb">
+      <div class="skill-group" style="grid-column:1/-1">
         <div class="skill-group-title">Spoken Languages</div>
         <div class="skill-pills"><span class="skill-pill">English: Proficient</span><span class="skill-pill">Hindi: Proficient</span><span class="skill-pill">French: Intermediate</span></div>
       </div>
@@ -740,66 +737,6 @@
 </footer>
 
 <script>
-/* ── HERO CANVAS: data network ── */
-(function() {
-  var canvas = document.getElementById('hero-canvas');
-  if (!canvas) return;
-  var ctx = canvas.getContext('2d');
-  var nodes = [];
-  var NODE_COUNT = 38;
-  var MAX_DIST = 160;
-  var accent = [122, 79, 109];
-
-  function resize() {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize, {passive:true});
-
-  for (var i = 0; i < NODE_COUNT; i++) {
-    nodes.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.35,
-      vy: (Math.random() - 0.5) * 0.35,
-      r: Math.random() * 2 + 1.2
-    });
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (var i = 0; i < nodes.length; i++) {
-      var n = nodes[i];
-      n.x += n.vx;
-      n.y += n.vy;
-      if (n.x < 0 || n.x > canvas.width)  n.vx *= -1;
-      if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
-
-      for (var j = i + 1; j < nodes.length; j++) {
-        var m = nodes[j];
-        var dx = n.x - m.x, dy = n.y - m.y;
-        var dist = Math.sqrt(dx*dx + dy*dy);
-        if (dist < MAX_DIST) {
-          var alpha = (1 - dist / MAX_DIST) * 0.18;
-          ctx.beginPath();
-          ctx.moveTo(n.x, n.y);
-          ctx.lineTo(m.x, m.y);
-          ctx.strokeStyle = 'rgba(' + accent[0] + ',' + accent[1] + ',' + accent[2] + ',' + alpha + ')';
-          ctx.lineWidth = 0.8;
-          ctx.stroke();
-        }
-      }
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(' + accent[0] + ',' + accent[1] + ',' + accent[2] + ',0.35)';
-      ctx.fill();
-    }
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
-
 /* ── CHAPTER BAR: animate on scroll entry ── */
 var chapterObs = new IntersectionObserver(function(entries) {
   entries.forEach(function(e) {
