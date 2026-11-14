@@ -399,3 +399,7 @@ footer{border-top:1px solid var(--border);max-width:none}
 .nav-drawer a.nav-cta{border-radius:999px}
 .nav-drawer a.active{color:var(--coral-d)}
 .nav-drawer-close{display:none}
+
+.inline-link{font-weight:700;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--sun);white-space:nowrap}
+.inline-link:hover{background:var(--sun-t)}
+.tl-org .inline-link{color:inherit}
