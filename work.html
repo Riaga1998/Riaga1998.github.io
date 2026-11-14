@@ -76,7 +76,13 @@
         <div class="tl-left"><div class="tl-period">Nov 2026 – Present</div></div>
         <div class="tl-right">
           <div class="tl-role">Research Assistant</div>
-          <div class="tl-org">Prof. Kartik Hosanagar's Lab · The Wharton School, UPenn</div>
+          <div class="tl-org has-scope">Prof. Kartik Hosanagar's Lab · The Wharton School, UPenn</div>
+          <div class="tl-scope">AI evaluation · brand-guideline scoring</div>
+          <ul class="tl-pts">
+            <li>Built a Python harness that scores AI-written marketing posts against a company's brand guidelines. Rules that can be counted, like exclamation marks, sentence case and reading level, run as code. Tone and judgment calls go to an LLM judge (Claude) that has to quote the post as evidence, and code checks the quote is really in the post.</li>
+            <li>Found that the judge missed a claim the brand forbids. Fixed it by having code pull out every sentence that could break the rule, and by adding a severity cap so one clear violation limits the score.</li>
+            <li>Now extending it to work for any brand. It takes a brand's documents and drafts a rubric, with every rule tied to a quote from the source and a person approving it before use.</li>
+          </ul>
         </div>
       </div>
 
