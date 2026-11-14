@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects · Ritika Agarwal</title>
+<meta name="description" content="AI products, ML research, and systems projects, from live demos like Career Canvas and PartSelect to an award-winning pathology compression study.">
+<meta property="og:title" content="Projects · Ritika Agarwal">
+<meta property="og:description" content="AI products, ML research, and systems projects, from live demos like Career Canvas and PartSelect to an award-winning pathology compression study.">
+<meta property="og:url" content="https://riaga1998.github.io/projects.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://riaga1998.github.io/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ritika Agarwal: From data to decisions">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Projects · Ritika Agarwal">
+<meta name="twitter:description" content="AI products, ML research, and systems projects, from live demos like Career Canvas and PartSelect to an award-winning pathology compression study.">
+<meta name="twitter:image" content="https://riaga1998.github.io/preview.png">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="pg-projects">
+
+<nav id="main-nav">
+  <a class="nav-logo" href="index.html">Ritika Agarwal</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="projects.html" class="active" aria-current="page">Projects</a></li>
+    <li><a href="research.html">Research &amp; Awards</a></li>
+    <li><a href="journey.html">Story</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-drawer" id="nav-drawer">
+  <button class="nav-drawer-close" id="nav-drawer-close" aria-label="Close menu">&#x2715;</button>
+  <a href="index.html">Home</a>
+  <a href="work.html">Work</a>
+  <a href="projects.html" class="active" aria-current="page">Projects</a>
+  <a href="research.html">Research &amp; Awards</a>
+  <a href="journey.html">Story</a>
+  <a href="index.html#contact" class="nav-cta">Contact</a>
+</div>
+
+<header class="page-hero-wrap">
+  <div class="page-hero">
+    <div class="page-eyebrow">Projects</div>
+    <h1 class="page-title">Things I’ve <em>built</em></h1>
+    <p class="page-sub">AI products, ML research, and systems work, from live demos to published papers. Education is just below.</p>
+    <div class="page-jump"><a href="#projects">Projects</a><a href="#education">Education ↓</a></div>
+  </div>
+</header>
+
+<div class="section-block" id="projects">
+  <div class="chapter">
+    <div class="chapter-left"><span class="chapter-num">01</span><span class="chapter-name">All <em>Projects</em></span></div>
+    <span class="chapter-desc">10 projects · AI product, ML research, data engineering, bioinformatics, systems, community infrastructure</span>
+  </div>
+  <div class="sec">
+    <div class="proj-grid reveal">
+
+      <a class="proj-card featured" href="https://genomefirewall-fn6vvubbx9k2lkn6guvdsr.streamlit.app/" target="_blank" rel="noopener">
+        <div class="proj-num">01</div>
+        <div class="proj-type">AI/ML · Bioinformatics · Live Demo</div>
+        <div class="proj-name">Genome Firewall <span class="proj-live">Live Demo ↗</span></div>
+        <div class="proj-status">Hack-Nation Global AI Hackathon, Jul 2026 · team selected from 5,500 applications across 125 countries</div>
+        <p class="proj-desc">An ML system that predicts which antibiotics will fail against an infection from an assembled bacterial genome, before lab results come back one to three days later. I built the data and genome-to-features pipeline: AMRFinderPlus encodes resistance genes and point mutations as interpretable binary features, training data is filtered down to lab-verified labels only, and evaluation uses MinHash/Jaccard cluster-level splitting so near-identical genomes can't leak across the split. Designed around honesty: calibrated confidence, a no-call option when evidence is weak, and a rule that every failure prediction has to cite a detected determinant.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Machine Learning</span><span class="proj-tag">Bioinformatics</span><span class="proj-tag">Streamlit</span><span class="proj-tag">Feature Engineering</span></div>
+          <span class="proj-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="proj-card featured" href="https://penntools.org/tools/career-canvas" target="_blank" rel="noopener">
+        <div class="proj-num">02</div>
+        <div class="proj-type">AI Product · Live</div>
+        <div class="proj-name">Career Canvas <span class="proj-live">Live Demo ↗</span></div>
+        <div class="proj-status live">Active · Wharton AI-PMT, UPenn</div>
+        <p class="proj-desc">An AI-powered course, major, and career planning tool built and launched through the Wharton AI-PMT fellowship. I proposed it and lead development end to end, covering product strategy, the mini-PRD, and building and evaluating the AI workflows behind profile extraction, skill gap analysis, and personalised recommendations. Also a maintainer on the broader Ask Penn platform.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">LLMs</span><span class="proj-tag">Prompt Engineering</span><span class="proj-tag">Product Strategy</span><span class="proj-tag">Python</span><span class="proj-tag">API Integration</span></div>
+          <span class="proj-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="proj-card featured" href="https://riaga1998.github.io/dorm-chef/#home" target="_blank" rel="noopener">
+        <div class="proj-num">03</div>
+        <div class="proj-type">LLMs · Fine-tuning · Evaluation · Live Demo</div>
+        <div class="proj-name">Dorm Chef <span class="proj-live">Live Demo ↗</span></div>
+        <div class="proj-status">CIS 5270 Trustworthy ML, UPenn</div>
+        <p class="proj-desc">A fine-tuned LLM (SFT plus DPO) for constraint-following recipe generation, working within the ingredients you actually have and a 10 to 15 minute cook time. Built a 2,000-sample synthetic data pipeline with LLM-as-judge filtering, designed both hard and soft evaluation metrics, and ran a six-config hyperparameter sweep against a zero-shot baseline. The finding I care about most: focused fine-tuning bought consistency, and saying that honestly mattered more than chasing a headline accuracy number.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">LLMs</span><span class="proj-tag">SFT · DPO</span><span class="proj-tag">Synthetic Data</span><span class="proj-tag">Model Evaluation</span><span class="proj-tag">Python</span></div>
+          <span class="proj-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="proj-card featured" href="https://partselect-agent-six.vercel.app/" target="_blank" rel="noopener">
+        <div class="proj-num">04</div>
+        <div class="proj-type">AI Product · Agents · Tool Use · Live Demo</div>
+        <div class="proj-name">PartSelect Parts Assistant <span class="proj-live">Live Demo ↗</span></div>
+        <div class="proj-status">Instalily case study</div>
+        <p class="proj-desc">A Claude tool-use agent for appliance-parts e-commerce, scoped to refrigerators and dishwashers. It diagnoses before it sells: clarifying questions and free checks first, then the likely part with the reason it could be the culprit. Part numbers, prices and compatibility come only from six tools, never from the model's memory, and compatibility returns a clear yes, no or unknown verdict. Order and billing questions go to a human with the order number attached instead of an invented status. React front end with product cards and a cart, FastAPI back end, 21 documented test cases.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">Claude API</span><span class="proj-tag">Tool Use</span><span class="proj-tag">FastAPI</span><span class="proj-tag">React</span><span class="proj-tag">Product Design</span></div>
+          <span class="proj-arrow">↗</span>
+        </div>
+      </a>
+
+      <div class="proj-card featured">
+        <div class="proj-num">05</div>
+        <div class="proj-type">Research · Data Engineering</div>
+        <div class="proj-name">Histology Image Compression</div>
+        <div class="proj-status live">Best Research Poster, 1st Place · SIIM CAIMI26</div>
+        <p class="proj-desc">Tile-based pipelines for multi-gigapixel whole-slide TIFF images, and a study of who a compression setting is really measured for. Much of a pathology slide is blank background, so an average can hide what happens to the tissue. Tissue-aware distributional matching for JPEG 2000 gave a 1.7× storage reduction at JPEG-80-equivalent quality. Presented at SIIM CAIMI26 in Philadelphia, where it won 1st place.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Pipelines</span><span class="proj-tag">Medical Imaging</span><span class="proj-tag">JPEG 2000</span></div>
+        </div>
+      </div>
+
+      <a class="proj-card featured" href="https://jobs.iscss.org/" target="_blank" rel="noopener">
+        <div class="proj-num">06</div>
+        <div class="proj-type">Web Infrastructure · Community · Live Demo</div>
+        <div class="proj-name">ISCSS Jobs Board <span class="proj-live">Live Demo ↗</span></div>
+        <div class="proj-status live">Went live Nov 9, 2026 · CSS Lab, UPenn</div>
+        <p class="proj-desc">Website and deployment for the International Society for Computational Social Science, including the IC2S2 annual conference platform. Built the events page and jobs board from scratch in TypeScript with an AI-assisted workflow, and manage GitHub workflows and Netlify deployments for a global academic audience.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">TypeScript</span><span class="proj-tag">Netlify</span><span class="proj-tag">GitHub</span><span class="proj-tag">UI/UX</span></div>
+          <span class="proj-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="proj-card" href="https://github.com/Riaga1998/Gemz" target="_blank" rel="noopener">
+        <div class="proj-num">07</div>
+        <div class="proj-type">ML Research · Healthcare</div>
+        <div class="proj-name">Gemcitabine Resistance Prediction</div>
+        <div class="proj-status">CIS 5200, UPenn</div>
+        <p class="proj-desc">ML predicting gemcitabine chemotherapy resistance in pancreatic cancer from GDSC genomic mutation data. Evaluated five algorithms under 10x5-fold cross-validation, with beam-search feature selection narrowing things to a compact four-gene panel. The scores came out near-perfect, which on a sample this small is a warning sign rather than a result, so the write-up flags the overfitting risk instead of claiming the number.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">SVM</span><span class="proj-tag">Feature Selection</span><span class="proj-tag">Genomics</span><span class="proj-tag">Precision Medicine</span></div>
+          <span class="proj-arrow">↗</span>
+        </div>
+      </a>
+
+      <div class="proj-card">
+        <div class="proj-num">08</div>
+        <div class="proj-type">Systems · C</div>
+        <div class="proj-name">PennOS</div>
+        <div class="proj-status">CIS 5480, UPenn · 4-person team</div>
+        <p class="proj-desc">A UNIX-like operating system simulator written in C: a priority scheduler, a FAT file system, and a shell with job control. I contributed across the kernel, filesystem, and shell, and did a lot of the integration work that made the three pieces behave as one system.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">C</span><span class="proj-tag">Operating Systems</span><span class="proj-tag">Systems Programming</span></div>
+          <span class="proj-note">Code private per course policy</span>
+        </div>
+      </div>
+
+      <a class="proj-card" href="https://www.tandfonline.com/doi/full/10.1080/08839514.2021.1975881" target="_blank" rel="noopener">
+        <div class="proj-num">09</div>
+        <div class="proj-type">ML · Patent Application · Publication</div>
+        <div class="proj-name">L-Dopa Response Prediction</div>
+        <div class="proj-status">Major project · Amity University</div>
+        <p class="proj-desc">A supervised ML model predicting levodopa treatment response in Parkinson's from clinical and wearable sensor data, reaching roughly 89% classification accuracy. The work led to a journal article, a review article, and a published patent application, taking one clinical question all the way from raw sensor data to filed IP.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">Clinical ML</span><span class="proj-tag">Feature Engineering</span><span class="proj-tag">Sensor Data</span><span class="proj-tag">Published</span></div>
+          <span class="proj-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="proj-card wide" href="papers/brassica-mir156-mir172.pdf" target="_blank" rel="noopener">
+        <div class="proj-wide-meta">
+          <div class="proj-num">10</div>
+          <div class="proj-type">Bioinformatics · Publication</div>
+          <div class="proj-name">Brassica miRNA Evolution <span class="proj-live">PDF ↗</span></div>
+          <div class="proj-status">Research internship · JNU</div>
+        </div>
+        <div class="proj-wide-body">
+          <p class="proj-desc">A synteny-based comparative genomics study tracing how the MIR156 and MIR172 microRNA families evolved across the five Brassica species of the U's triangle. Ran the full pipeline in BLAST and MEGA7: identified 177 MIR156 and 56 MIR172 orthologs, mapped their chromosomal locations, and built maximum-likelihood phylogenies that placed MIR156i as the most recently evolved family member. First author, and the only intern on the paper.</p>
+          <div class="proj-foot">
+            <div class="proj-tags"><span class="proj-tag">BLAST</span><span class="proj-tag">MEGA v7</span><span class="proj-tag">Phylogenetics</span></div>
+            <span class="proj-arrow">↗</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<div class="section-block" id="education">
+  <div class="chapter">
+    <div class="chapter-left"><span class="chapter-num">02</span><span class="chapter-name"><em>Education</em></span></div>
+    <span class="chapter-desc">Penn MSE · Amity B.Tech · certifications</span>
+  </div>
+  <div class="sec">
+    <div class="tl reveal">
+      <div class="tl-row">
+        <div class="tl-left"><div class="tl-period">Aug 2025 – May 2027</div></div>
+        <div class="tl-right">
+          <div class="tl-role">Master of Science in Engineering, Computer &amp; Information Science</div>
+          <div class="tl-org">University of Pennsylvania, School of Engineering and Applied Science</div>
+          <ul class="tl-pts">
+            <li>Concentration: Artificial Intelligence · GPA 3.57/4.00</li>
+            <li>Coursework: Machine Learning, Algorithms for Big Data, Trustworthy ML, Foundations of AI: Deep Learning, Operating Systems</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-left"><div class="tl-period">Aug 2016 – Sep 2020</div></div>
+        <div class="tl-right">
+          <div class="tl-role">Bachelor of Technology, Computer Science &amp; Engineering</div>
+          <div class="tl-org ext">Amity University Haryana · Gurugram, India</div>
+          <ul class="tl-pts">
+            <li>Minor Degree in Data Analytics · GPA 3.64/4.00 · one patent application and two publications from undergraduate research</li>
+            <li>Coursework: Artificial Intelligence, Genetic Algorithms, Soft Computing, Statistics &amp; Statistical Quality Control</li>
+            <li>Shree Baljit Shastri Award recipient for outstanding undergraduate contributions</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-left"><div class="tl-period">Until 2016</div></div>
+        <div class="tl-right">
+          <div class="tl-role">High School, Science</div>
+          <div class="tl-org ext">Blue Bells Model Senior Secondary School · Gurugram, India</div>
+          <ul class="tl-pts">
+            <li>93.2% in Class 12, taking all four sciences across both the PCM and PCB streams</li>
+            <li>50% merit scholarship · 1st place in the Silverzone International Olympiad of Mathematics</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-eyebrow reveal">Certifications</div>
+    <div class="skills-outer reveal">
+      <div class="skill-group" style="grid-column:1/-1">
+        <div class="skill-group-title">IBM Career Education Program &amp; other coursework</div>
+        <div class="skill-pills"><span class="skill-pill">Machine Learning with Python (IBM)</span><span class="skill-pill">Python for Data Science</span><span class="skill-pill">Data Science Foundations, Level 2</span><span class="skill-pill">Deep Learning using TensorFlow</span><span class="skill-pill">Statistics 101</span><span class="skill-pill">R Essentials</span><span class="skill-pill">Data Visualization</span><span class="skill-pill">Data Analysis</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-name">Ritika Agarwal</span>
+  <span class="footer-links">
+    <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#114;&#105;&#116;&#105;&#107;&#97;&#46;&#97;&#103;&#97;&#49;&#57;&#57;&#56;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Email</a>
+    <a href="https://www.linkedin.com/in/ritikaagarwal1998" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a href="https://github.com/Riaga1998" target="_blank" rel="noopener">GitHub ↗</a>
+    <a href="https://scholar.google.com/citations?user=a_FAQb8AAAAJ&amp;hl=en" target="_blank" rel="noopener">Scholar ↗</a>
+  </span>
+  <span class="footer-note">UPenn MSE '27 · Philadelphia, PA</span>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
