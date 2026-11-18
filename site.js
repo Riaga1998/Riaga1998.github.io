@@ -1,4 +1,4 @@
-/* Shared behaviour for every page: nav shadow, mobile drawer, scroll reveal. */
+/* Shared behaviour for every page: nav shadow, mobile drawer, scroll reveal, hero terminal. */
 (function () {
   var nav = document.getElementById('main-nav');
   if (nav) {
@@ -29,4 +29,43 @@
     });
   }, { threshold: 0.05 });
   items.forEach(function (el) { obs.observe(el); });
+})();
+
+/* Home hero terminal: types the lines out once. Skipped entirely (text stays
+   as written in the HTML) when the visitor prefers reduced motion. */
+(function () {
+  var term = document.getElementById('term');
+  if (!term) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var jobs = Array.prototype.slice.call(term.querySelectorAll('.t-line')).map(function (line) {
+    var nodes = [], walker = document.createTreeWalker(line, NodeFilter.SHOW_TEXT, null), n;
+    while ((n = walker.nextNode())) nodes.push({ node: n, text: n.nodeValue });
+    return { line: line, nodes: nodes, isOut: line.classList.contains('t-out') };
+  });
+
+  /* lock the height first so typing never moves the layout */
+  term.style.minHeight = term.offsetHeight + 'px';
+  jobs.forEach(function (j) {
+    j.nodes.forEach(function (s) { s.node.nodeValue = ''; });
+    j.line.style.visibility = 'hidden';
+  });
+
+  var cursor = document.createElement('span');
+  cursor.className = 't-cur';
+  var ji = 0, ni = 0, ci = 0;
+
+  function next() {
+    var job = jobs[ji];
+    if (!job) return;                       /* finished: cursor keeps blinking */
+    if (ni === 0 && ci === 0) { job.line.style.visibility = 'visible'; job.line.appendChild(cursor); }
+    var seg = job.nodes[ni];
+    if (!seg) { ji++; ni = 0; ci = 0; setTimeout(next, job.isOut ? 380 : 220); return; }
+    if (ci < seg.text.length) {
+      ci++;
+      seg.node.nodeValue = seg.text.slice(0, ci);
+      setTimeout(next, job.isOut ? 14 : 55);
+    } else { ni++; ci = 0; next(); }
+  }
+  setTimeout(next, 1200);
 })();
