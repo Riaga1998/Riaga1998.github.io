@@ -10,8 +10,13 @@
   var burger = document.getElementById('nav-burger');
   var drawer = document.getElementById('nav-drawer');
   var drawerClose = document.getElementById('nav-drawer-close');
-  function closeDrawer() { if (drawer) drawer.classList.remove('open'); }
-  if (burger && drawer) burger.addEventListener('click', function () { drawer.classList.toggle('open'); });
+  function setDrawer(open) {
+    if (!drawer) return;
+    drawer.classList.toggle('open', open);
+    if (burger) burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  function closeDrawer() { setDrawer(false); }
+  if (burger && drawer) burger.addEventListener('click', function () { setDrawer(!drawer.classList.contains('open')); });
   if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
   if (drawer) {
     drawer.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeDrawer); });
