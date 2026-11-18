@@ -17,7 +17,10 @@
 <meta name="twitter:title" content="Work and Skills · Ritika Agarwal">
 <meta name="twitter:description" content="Experience and skills: research assistant at Wharton and Penn labs, AI Product Manager Fellow, and nearly five years at VMware, Omnissa and EY.">
 <meta name="twitter:image" content="https://riaga1998.github.io/preview.png">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#0D0F12">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="pg-work">
@@ -32,7 +35,7 @@
     <li><a href="journey.html">Story</a></li>
     <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
   </ul>
-  <button class="nav-burger" id="nav-burger" aria-label="Open menu">
+  <button class="nav-burger" id="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-drawer">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -49,7 +52,7 @@
 
 <header class="page-hero-wrap">
   <div class="page-hero">
-    <div class="page-eyebrow">Work</div>
+    <div class="page-eyebrow">~/work</div>
     <h1 class="page-title">Where I’ve <em>worked</em></h1>
     <p class="page-sub">Research and product work at Penn and Wharton, after nearly five years in enterprise SaaS and consulting at VMware, Omnissa and EY.</p>
     <div class="page-jump"><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="projects.html#education">Education →</a></div>
@@ -66,28 +69,28 @@
 
 <div class="section-block" id="experience">
   <div class="chapter">
-    <div class="chapter-left"><span class="chapter-num">01</span><span class="chapter-name">Work <em>Experience</em></span></div>
+    <div class="chapter-left"><span class="path">~/work/experience</span><h2 class="chapter-name">Work <em>Experience</em></h2></div>
     <span class="chapter-desc">Oct 2020 to Jul 2025 in industry · VMware / Omnissa, EY · plus UPenn research labs</span>
   </div>
   <div class="sec">
     <div class="tl reveal">
 
       <div class="tl-row">
-        <div class="tl-left"><div class="tl-period">Nov 2026 – Present</div></div>
+        <div class="tl-left cur"><div class="tl-period">Nov 2026 – Present</div></div>
         <div class="tl-right">
           <div class="tl-role">Research Assistant</div>
-          <div class="tl-org has-scope">Prof. Kartik Hosanagar's Lab · The Wharton School, UPenn</div>
+          <div class="tl-org has-scope">Wharton Human-AI Research · Prof. Kartik Hosanagar · The Wharton School, UPenn</div>
           <div class="tl-scope">AI evaluation · brand-guideline scoring</div>
           <ul class="tl-pts">
-            <li>Built a Python harness that scores AI-written marketing posts against a company's brand guidelines. Rules that can be counted, like exclamation marks, sentence case and reading level, run as code. Tone and judgment calls go to an LLM judge (Claude) that has to quote the post as evidence, and code checks the quote is really in the post.</li>
-            <li>Found that the judge missed a claim the brand forbids. Fixed it by having code pull out every sentence that could break the rule, and by adding a severity cap so one clear violation limits the score.</li>
-            <li>Now extending it to work for any brand. It takes a brand's documents and drafts a rubric, with every rule tied to a quote from the source and a person approving it before use.</li>
+            <li>Built a Python harness that scores AI-written marketing posts against brand guidelines: countable rules (exclamation marks, sentence case, reading level) run as code, and tone calls go to a Claude judge that must quote the post, with code verifying every quote. <!-- TODO(ritika): add agreement with human raters, N posts --></li>
+            <li>Caught the judge missing a forbidden brand claim and fixed it by extracting every candidate sentence in code and adding a severity cap, so one clear violation limits the score. <!-- TODO(ritika): add before/after recall --></li>
+            <li>Extending it to any brand: it drafts a rubric from the brand's documents, every rule tied to a source quote, with a person approving it before use.</li>
           </ul>
         </div>
       </div>
 
       <div class="tl-row">
-        <div class="tl-left"><div class="tl-period">Mar 2026 – Present</div></div>
+        <div class="tl-left cur"><div class="tl-period">Mar 2026 – Present</div></div>
         <div class="tl-right">
           <div class="tl-role">Student Researcher</div>
           <div class="tl-org has-scope">Digital Pathology Research Lab · University of Pennsylvania</div>
@@ -101,7 +104,7 @@
       </div>
 
       <div class="tl-row">
-        <div class="tl-left"><div class="tl-period">Feb 2026 – Present</div></div>
+        <div class="tl-left cur"><div class="tl-period">Feb 2026 – Present</div></div>
         <div class="tl-right">
           <div class="tl-role">AI Product Manager Fellow</div>
           <div class="tl-org has-scope">Wharton AI-PMT · The Wharton School, UPenn</div>
@@ -224,7 +227,7 @@
 
 <div class="section-block" id="skills">
   <div class="chapter">
-    <div class="chapter-left"><span class="chapter-num">02</span><span class="chapter-name">Technical <em>Skills</em></span></div>
+    <div class="chapter-left"><span class="path">~/work/skills</span><h2 class="chapter-name">Technical <em>Skills</em></h2></div>
     <span class="chapter-desc">Python · SQL · ML · LLMs · Cloud · IAM · Product</span>
   </div>
   <div class="sec">

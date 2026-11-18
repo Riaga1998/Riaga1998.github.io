@@ -17,7 +17,10 @@
 <meta name="twitter:title" content="Projects · Ritika Agarwal">
 <meta name="twitter:description" content="AI products, ML research, and systems projects, from live demos like Career Canvas and PartSelect to an award-winning pathology compression study.">
 <meta name="twitter:image" content="https://riaga1998.github.io/preview.png">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#0D0F12">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="pg-projects">
@@ -32,7 +35,7 @@
     <li><a href="journey.html">Story</a></li>
     <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
   </ul>
-  <button class="nav-burger" id="nav-burger" aria-label="Open menu">
+  <button class="nav-burger" id="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-drawer">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -49,7 +52,7 @@
 
 <header class="page-hero-wrap">
   <div class="page-hero">
-    <div class="page-eyebrow">Projects</div>
+    <div class="page-eyebrow">~/projects</div>
     <h1 class="page-title">Things I’ve <em>built</em></h1>
     <p class="page-sub">AI products, ML research, and systems work, from live demos to published papers. Education is just below.</p>
     <div class="page-jump"><a href="#projects">Projects</a><a href="#education">Education ↓</a></div>
@@ -58,15 +61,14 @@
 
 <div class="section-block" id="projects">
   <div class="chapter">
-    <div class="chapter-left"><span class="chapter-num">01</span><span class="chapter-name">All <em>Projects</em></span></div>
+    <div class="chapter-left"><span class="path">~/projects/all</span><h2 class="chapter-name">All <em>Projects</em></h2></div>
     <span class="chapter-desc">11 projects · AI product, evaluation, ML research, data engineering, bioinformatics, systems, community infrastructure</span>
   </div>
   <div class="sec">
     <div class="proj-grid reveal">
 
       <a class="proj-card featured" href="https://genomefirewall-fn6vvubbx9k2lkn6guvdsr.streamlit.app/" target="_blank" rel="noopener">
-        <div class="proj-num">01</div>
-        <div class="proj-type">AI/ML · Bioinformatics · Live Demo</div>
+        <div class="proj-meta"><span class="chip live">live</span><span class="proj-type">AI/ML · Bioinformatics · Live Demo</span></div>
         <div class="proj-name">Genome Firewall <span class="proj-live">Live Demo ↗</span></div>
         <div class="proj-status">Hack-Nation Global AI Hackathon, Jul 2026 · team selected from 5,500 applications across 125 countries</div>
         <p class="proj-desc">An ML system that predicts which antibiotics will fail against an infection from an assembled bacterial genome, before lab results come back one to three days later. I built the data and genome-to-features pipeline: AMRFinderPlus encodes resistance genes and point mutations as interpretable binary features, training data is filtered down to lab-verified labels only, and evaluation uses MinHash/Jaccard cluster-level splitting so near-identical genomes can't leak across the split. Designed around honesty: calibrated confidence, a no-call option when evidence is weak, and a rule that every failure prediction has to cite a detected determinant.</p>
@@ -77,8 +79,7 @@
       </a>
 
       <a class="proj-card featured" href="https://penntools.org/tools/career-canvas" target="_blank" rel="noopener">
-        <div class="proj-num">02</div>
-        <div class="proj-type">AI Product · Live</div>
+        <div class="proj-meta"><span class="chip live">live</span><span class="proj-type">AI Product · Live</span></div>
         <div class="proj-name">Career Canvas <span class="proj-live">Live Demo ↗</span></div>
         <div class="proj-status live">Active · Wharton AI-PMT, UPenn</div>
         <p class="proj-desc">An AI-powered course, major, and career planning tool built and launched through the Wharton AI-PMT fellowship. I proposed it and lead development end to end, covering product strategy, the mini-PRD, and building and evaluating the AI workflows behind profile extraction, skill gap analysis, and personalised recommendations. Also a maintainer on the broader Ask Penn platform.</p>
@@ -89,8 +90,7 @@
       </a>
 
       <a class="proj-card featured" href="https://riaga1998.github.io/dorm-chef/#home" target="_blank" rel="noopener">
-        <div class="proj-num">03</div>
-        <div class="proj-type">LLMs · Fine-tuning · Evaluation · Live Demo</div>
+        <div class="proj-meta"><span class="chip live">live</span><span class="proj-type">LLMs · Fine-tuning · Evaluation · Live Demo</span></div>
         <div class="proj-name">Dorm Chef <span class="proj-live">Live Demo ↗</span></div>
         <div class="proj-status">CIS 5270 Trustworthy ML, UPenn</div>
         <p class="proj-desc">A fine-tuned LLM (SFT plus DPO) for constraint-following recipe generation, working within the ingredients you actually have and a 10 to 15 minute cook time. Built a 2,000-sample synthetic data pipeline with LLM-as-judge filtering, designed both hard and soft evaluation metrics, and ran a six-config hyperparameter sweep against a zero-shot baseline. The finding I care about most: focused fine-tuning bought consistency, and saying that honestly mattered more than chasing a headline accuracy number.</p>
@@ -101,8 +101,7 @@
       </a>
 
       <a class="proj-card featured" href="https://partselect-agent-six.vercel.app/" target="_blank" rel="noopener">
-        <div class="proj-num">04</div>
-        <div class="proj-type">AI Product · Agents · Tool Use · Live Demo</div>
+        <div class="proj-meta"><span class="chip live">live</span><span class="proj-type">AI Product · Agents · Tool Use · Live Demo</span></div>
         <div class="proj-name">PartSelect Parts Assistant <span class="proj-live">Live Demo ↗</span></div>
         <div class="proj-status">Instalily case study</div>
         <p class="proj-desc">A Claude tool-use agent for appliance-parts e-commerce, scoped to refrigerators and dishwashers. It diagnoses before it sells: clarifying questions and free checks first, then the likely part with the reason it could be the culprit. Part numbers, prices and compatibility come only from six tools, never from the model's memory, and compatibility returns a clear yes, no or unknown verdict. Order and billing questions go to a human with the order number attached instead of an invented status. React front end with product cards and a cart, FastAPI back end, 21 documented test cases.</p>
@@ -113,8 +112,7 @@
       </a>
 
       <div class="proj-card featured">
-        <div class="proj-num">05</div>
-        <div class="proj-type">AI Evaluation · LLM-as-Judge · Research</div>
+        <div class="proj-meta"><span class="chip live">active</span><span class="proj-type">AI Evaluation · LLM-as-Judge · Research</span></div>
         <div class="proj-name">Brand Guideline Scoring Harness</div>
         <div class="proj-status live">Active · Wharton, advised by Prof. Kartik Hosanagar</div>
         <p class="proj-desc">A Python harness that scores AI-written marketing posts against a company's brand guidelines. Rules that can be counted, like exclamation marks, sentence case and reading level, run as code. Tone and judgment calls go to a Claude judge that has to quote the post as evidence, and code checks the quote is really in the post. When the judge missed a claim the brand forbids, I had code pull out every sentence that could break the rule and added a severity cap so one clear violation limits the score. Now extending it to work for any brand: it drafts a rubric from a brand's documents, with every rule tied to a quote from the source and a person approving it before use.</p>
@@ -124,8 +122,7 @@
       </div>
 
       <a class="proj-card featured" href="https://siim.org/organization-governance/siim-caimi/siim-honors-top-research-and-ai-innovation-at-caimi26/" target="_blank" rel="noopener">
-        <div class="proj-num">06</div>
-        <div class="proj-type">Research · Data Engineering</div>
+        <div class="proj-meta"><span class="chip done">presented</span><span class="proj-type">Research · Data Engineering</span></div>
         <div class="proj-name">Histology Image Compression</div>
         <div class="proj-status live">Best Research Poster, 1st Place · SIIM CAIMI26</div>
         <p class="proj-desc">Tile-based pipelines for multi-gigapixel whole-slide TIFF images, and a study of who a compression setting is really measured for. Much of a pathology slide is blank background, so an average can hide what happens to the tissue. Tissue-aware distributional matching for JPEG 2000 gave a 1.7× storage reduction at JPEG-80-equivalent quality. Presented at SIIM CAIMI26 in Philadelphia, where it won 1st place.</p>
@@ -136,8 +133,7 @@
       </a>
 
       <a class="proj-card featured" href="https://jobs.iscss.org/" target="_blank" rel="noopener">
-        <div class="proj-num">07</div>
-        <div class="proj-type">Web Infrastructure · Community · Live Demo</div>
+        <div class="proj-meta"><span class="chip live">live</span><span class="proj-type">Web Infrastructure · Community · Live Demo</span></div>
         <div class="proj-name">ISCSS Jobs Board <span class="proj-live">Live Demo ↗</span></div>
         <div class="proj-status live">Went live Nov 9, 2026 · CSS Lab, UPenn</div>
         <p class="proj-desc">Website and deployment for the International Society for Computational Social Science, including the IC2S2 annual conference platform. Built the events page and jobs board from scratch in TypeScript with an AI-assisted workflow, and manage GitHub workflows and Netlify deployments for a global academic audience.</p>
@@ -148,8 +144,7 @@
       </a>
 
       <a class="proj-card" href="https://github.com/Riaga1998/Gemz" target="_blank" rel="noopener">
-        <div class="proj-num">08</div>
-        <div class="proj-type">ML Research · Healthcare</div>
+        <div class="proj-meta"><span class="chip done">completed</span><span class="proj-type">ML Research · Healthcare</span></div>
         <div class="proj-name">Gemcitabine Resistance Prediction</div>
         <div class="proj-status">CIS 5200, UPenn</div>
         <p class="proj-desc">ML predicting gemcitabine chemotherapy resistance in pancreatic cancer from GDSC genomic mutation data. Evaluated five algorithms under 10x5-fold cross-validation, with beam-search feature selection narrowing things to a compact four-gene panel. The scores came out near-perfect, which on a sample this small is a warning sign rather than a result, so the write-up flags the overfitting risk instead of claiming the number.</p>
@@ -160,8 +155,7 @@
       </a>
 
       <div class="proj-card">
-        <div class="proj-num">09</div>
-        <div class="proj-type">Systems · C</div>
+        <div class="proj-meta"><span class="chip done">completed</span><span class="proj-type">Systems · C</span></div>
         <div class="proj-name">PennOS</div>
         <div class="proj-status">CIS 5480, UPenn · 4-person team</div>
         <p class="proj-desc">A UNIX-like operating system simulator written in C: a priority scheduler, a FAT file system, and a shell with job control. I contributed across the kernel, filesystem, and shell, and did a lot of the integration work that made the three pieces behave as one system.</p>
@@ -172,8 +166,7 @@
       </div>
 
       <a class="proj-card" href="https://www.tandfonline.com/doi/full/10.1080/08839514.2021.1975881" target="_blank" rel="noopener">
-        <div class="proj-num">10</div>
-        <div class="proj-type">ML · Patent Application · Publication</div>
+        <div class="proj-meta"><span class="chip done">patent application</span><span class="proj-type">ML · Patent Application · Publication</span></div>
         <div class="proj-name">L-Dopa Response Prediction</div>
         <div class="proj-status">Major project · Amity University</div>
         <p class="proj-desc">A supervised ML model predicting levodopa treatment response in Parkinson's from clinical and wearable sensor data, reaching roughly 89% classification accuracy. The work led to a journal article, a review article, and a published patent application, taking one clinical question all the way from raw sensor data to filed IP.</p>
@@ -185,10 +178,9 @@
 
       <a class="proj-card wide" href="papers/brassica-mir156-mir172.pdf" target="_blank" rel="noopener">
         <div class="proj-wide-meta">
-          <div class="proj-num">11</div>
-          <div class="proj-type">Bioinformatics · Publication</div>
-          <div class="proj-name">Brassica miRNA Evolution <span class="proj-live">PDF ↗</span></div>
-          <div class="proj-status">Research internship · JNU</div>
+          <div class="proj-meta"><span class="chip done">published</span><span class="proj-type">Bioinformatics · Publication</span></div>
+        <div class="proj-name">Brassica miRNA Evolution <span class="proj-live">PDF ↗</span></div>
+        <div class="proj-status">Research internship · JNU</div>
         </div>
         <div class="proj-wide-body">
           <p class="proj-desc">A synteny-based comparative genomics study tracing how the MIR156 and MIR172 microRNA families evolved across the five Brassica species of the U's triangle. Ran the full pipeline in BLAST and MEGA7: identified 177 MIR156 and 56 MIR172 orthologs, mapped their chromosomal locations, and built maximum-likelihood phylogenies that placed MIR156i as the most recently evolved family member. First author, and the only intern on the paper.</p>
@@ -205,13 +197,13 @@
 
 <div class="section-block" id="education">
   <div class="chapter">
-    <div class="chapter-left"><span class="chapter-num">02</span><span class="chapter-name"><em>Education</em></span></div>
+    <div class="chapter-left"><span class="path">~/education</span><h2 class="chapter-name"><em>Education</em></h2></div>
     <span class="chapter-desc">Penn MSE · Amity B.Tech · certifications</span>
   </div>
   <div class="sec">
     <div class="tl reveal">
       <div class="tl-row">
-        <div class="tl-left"><div class="tl-period">Aug 2025 – May 2027</div></div>
+        <div class="tl-left cur"><div class="tl-period">Aug 2025 – May 2027</div></div>
         <div class="tl-right">
           <div class="tl-role">Master of Science in Engineering, Computer &amp; Information Science</div>
           <div class="tl-org">University of Pennsylvania, School of Engineering and Applied Science</div>
