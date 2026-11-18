@@ -43,6 +43,7 @@ a{color:inherit}
 /* page accent, used by the page header */
 body.pg-work{--c:var(--sky);--t:var(--sky-t);--d:var(--sky-d)}
 body.pg-projects{--c:var(--coral);--t:var(--coral-t);--d:var(--coral-d)}
+body.pg-education{--c:var(--violet);--t:var(--violet-t);--d:var(--violet-d)}
 body.pg-research{--c:var(--mint);--t:var(--mint-t);--d:var(--mint-d)}
 body.pg-story{--c:var(--pink);--t:var(--pink-t);--d:var(--pink-d)}
 
@@ -434,3 +435,10 @@ footer{border-top:1px solid var(--border);max-width:none}
 .hero-term{align-self:stretch}
 @media(max-width:900px){.hero-story{margin-top:1.4rem}}
 @media(prefers-reduced-motion:reduce){.hero-story{animation:none;opacity:1}}
+
+/* resume link under the award card */
+.hero-resume{display:flex;align-items:center;justify-content:space-between;gap:.75rem;width:0;min-width:100%;padding:.7rem 1rem;border-radius:14px;background:#fff;border:2px solid var(--ink);color:var(--ink);text-decoration:none;font-size:.9rem;font-weight:600;transition:background .15s,transform .15s}
+.hero-resume:hover{background:var(--sun-t);transform:translateY(-2px)}
+
+/* seven nav items need more room: use the burger menu up to 960px */
+@media(max-width:960px){.nav-links{display:none}.nav-burger{display:flex}}
