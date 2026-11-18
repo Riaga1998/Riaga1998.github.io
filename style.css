@@ -428,3 +428,8 @@ footer{border-top:1px solid var(--border);max-width:none}
 @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
 @media(max-width:900px){.hero-term{margin-top:1.6rem;max-width:none}}
 @media(prefers-reduced-motion:reduce){.hero-term{animation:none;opacity:1}.t-cur{animation:none}}
+
+/* burger morphs to an X while the drawer is open */
+.nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
