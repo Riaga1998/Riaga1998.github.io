@@ -179,7 +179,6 @@ a.proj-card:hover{transform:translateY(-5px);box-shadow:0 14px 0 -6px var(--c)}
 .proj-card:nth-child(6n+4){--c:var(--mint);--t:var(--mint-t);--d:var(--mint-d)}
 .proj-card:nth-child(6n+5){--c:var(--pink);--t:var(--pink-t);--d:var(--pink-d)}
 .proj-card:nth-child(6n+6){--c:var(--violet);--t:var(--violet-t);--d:var(--violet-d)}
-.proj-num{display:inline-grid;place-items:center;align-self:flex-start;min-width:2.1rem;height:2.1rem;padding:0 .4rem;border-radius:50%;background:var(--c);color:var(--ink);font-family:var(--font-display);font-size:.85rem;font-weight:800;border:2px solid var(--ink)}
 .proj-type{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--d)}
 .proj-name{font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--ink);line-height:1.15;letter-spacing:-.02em}
 .proj-live{display:inline-block;vertical-align:middle;margin-left:.4rem;padding:.2rem .6rem;border-radius:999px;background:#fff;color:var(--d);border:1.5px solid var(--d);font-family:var(--font-body);font-size:.62rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;letter-spacing:.07em}
@@ -408,3 +407,8 @@ footer{border-top:1px solid var(--border);max-width:none}
 .page-eyebrow,.cred-eyebrow,.teaser-eyebrow,.contact-eyebrow{font-family:var(--font-mono);text-transform:none;letter-spacing:.01em}
 .cred-eyebrow,.teaser-eyebrow,.contact-eyebrow{font-weight:600;font-size:.78rem}
 .page-eyebrow{font-weight:600;font-size:.8rem}
+
+/* status chips on project cards: live / active / presented / completed / published / patent application */
+.proj-meta{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .7rem}
+.chip{display:inline-flex;align-items:center;gap:.4rem;padding:.22rem .65rem;border-radius:999px;background:#fff;color:var(--d);border:1.5px solid var(--d);font-family:var(--font-mono);font-size:.66rem;font-weight:600;letter-spacing:.02em;line-height:1.2;white-space:nowrap}
+.chip.live::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--d)}
