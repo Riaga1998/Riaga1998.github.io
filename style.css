@@ -433,3 +433,7 @@ footer{border-top:1px solid var(--border);max-width:none}
 .nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
 .nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
 .nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+/* Home is now hero > highlights > story > contact: give the story card breathing room and align it with its neighbours */
+.teaser{width:min(1180px,90vw);max-width:none;padding:0}
+.teaser-card{margin-top:2.5rem}
