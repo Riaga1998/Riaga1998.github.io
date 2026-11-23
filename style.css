@@ -171,8 +171,8 @@ nav.scrolled{box-shadow:0 4px 24px rgba(30,27,58,.08)}
 
 /* PROJECTS: masonry. Cards keep their natural height and columns pack tightly,
    so short cards never sit on empty space and there is no orphan row. */
-.proj-grid{column-count:3;column-gap:1.1rem}
-.proj-card{--c:var(--coral);--t:var(--coral-t);--d:var(--coral-d);background:var(--t);border-radius:var(--radius);padding:1.75rem;display:flex;flex-direction:column;gap:.85rem;break-inside:avoid;margin-bottom:1.1rem;text-decoration:none;color:inherit;transition:transform .22s,box-shadow .22s;position:relative}
+.proj-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem}
+.proj-card{--c:var(--coral);--t:var(--coral-t);--d:var(--coral-d);background:var(--t);border-radius:var(--radius);padding:1.75rem;display:flex;flex-direction:column;gap:.85rem;min-width:0;text-decoration:none;color:inherit;transition:transform .22s,box-shadow .22s;position:relative}
 a.proj-card:hover{transform:translateY(-5px);box-shadow:0 14px 0 -6px var(--c)}
 .proj-card:nth-child(6n+2){--c:var(--sun);--t:var(--sun-t);--d:var(--sun-d)}
 .proj-card:nth-child(6n+3){--c:var(--sky);--t:var(--sky-t);--d:var(--sky-d)}
@@ -197,7 +197,7 @@ a.proj-card:hover{transform:translateY(-5px);box-shadow:0 14px 0 -6px var(--c)}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 .proj-wide-meta,.proj-wide-body{display:flex;flex-direction:column;gap:.85rem;min-width:0}
 .proj-wide-body{flex:1}
-@media(max-width:959px){.proj-grid{column-count:2}}
+@media(max-width:959px){.proj-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* TIMELINE */
 .tl{display:grid;grid-template-columns:200px 1fr}
@@ -307,7 +307,7 @@ footer{padding:1.75rem 5vw 2.5rem;display:flex;justify-content:space-between;ali
   .hero-stat-num{font-size:1.9rem}
   .hero-stat-label{font-size:.66rem}
   .scroll-line{display:none}
-  .proj-grid{column-count:1}
+  .proj-grid{grid-template-columns:minmax(0,1fr)}
   .tl{grid-template-columns:1fr}
   .tl-left{border-right:none;text-align:left;padding:1.4rem 0 .4rem}
   .tl-left::after{display:none}
