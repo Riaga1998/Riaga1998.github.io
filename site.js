@@ -1,4 +1,4 @@
-/* Shared behaviour for every page: nav shadow, mobile drawer, scroll reveal, hero terminal. */
+/* Shared behaviour for every page: nav shadow, mobile drawer, scroll reveal, hero terminal, project masonry. */
 (function () {
   var nav = document.getElementById('main-nav');
   if (nav) {
@@ -73,4 +73,32 @@
     } else { ni++; ci = 0; next(); }
   }
   setTimeout(next, 1200);
+})();
+
+/* Projects page: staggered masonry that keeps the HTML (priority) order.
+   Each card gets a grid-row span equal to its height; with dense auto-placement the next card
+   always lands in the shortest column, so the first cards in the file end up on top. */
+(function () {
+  var grid = document.querySelector('.proj-grid');
+  if (!grid) return;
+  var cards = Array.prototype.slice.call(grid.children);
+  var unit = 4;                                    /* must match grid-auto-rows in style.css */
+  var queued = false;
+
+  function layout() {
+    queued = false;
+    grid.classList.add('masonry');
+    var gap = parseFloat(getComputedStyle(grid).columnGap) || 0;
+    cards.forEach(function (c) { c.style.gridRowEnd = 'auto'; });   /* measure natural heights */
+    cards.forEach(function (c) {
+      var h = c.getBoundingClientRect().height;
+      c.style.gridRowEnd = 'span ' + Math.ceil((h + gap) / unit);
+    });
+  }
+  function queue() { if (!queued) { queued = true; requestAnimationFrame(layout); } }
+
+  layout();
+  window.addEventListener('resize', queue);
+  window.addEventListener('load', queue);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(queue);
 })();

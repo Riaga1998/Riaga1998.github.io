@@ -442,3 +442,9 @@ footer{border-top:1px solid var(--border);max-width:none}
 
 /* seven nav items need more room: use the burger menu up to 960px */
 @media(max-width:960px){.nav-links{display:none}.nav-burger{display:flex}}
+
+/* Staggered "masonry" packing for the project cards. The cards stay in priority order in the HTML;
+   site.js adds .masonry and gives each card a row span from its height, and dense auto-placement
+   then drops every card into the shortest column. Without JS the plain grid above is used. */
+.proj-grid.masonry{grid-auto-flow:dense;grid-auto-rows:4px;row-gap:0}
+.proj-grid.masonry .proj-card{align-self:start}
