@@ -64,10 +64,52 @@
 <div class="section-block" id="projects">
   <div class="chapter">
     <div class="chapter-left"><span class="path">~/projects/all</span><h2 class="chapter-name">All <em>Projects</em></h2></div>
-    <span class="chapter-desc">11 projects · AI product, evaluation, ML research, data engineering, bioinformatics, systems, community infrastructure</span>
+    <span class="chapter-desc">12 projects · AI product, evaluation, ML research, data engineering, bioinformatics, systems, community infrastructure</span>
   </div>
   <div class="sec">
     <div class="proj-grid reveal">
+      <div class="proj-card featured">
+        <div class="proj-meta"><span class="chip live">active</span><span class="proj-type">AI Evaluation · LLM-as-Judge · Research</span></div>
+        <div class="proj-name">Brand Guideline Scoring Harness</div>
+        <div class="proj-status live">Active · Wharton, advised by Prof. Kartik Hosanagar</div>
+        <p class="proj-desc">A Python harness that scores AI-written marketing posts against a company's brand guidelines. Rules that can be counted, like exclamation marks, sentence case and reading level, run as code. Tone and judgment calls go to a Claude judge that has to quote the post as evidence, and code checks the quote is really in the post. When the judge missed a claim the brand forbids, I had code pull out every sentence that could break the rule and added a severity cap so one clear violation limits the score. Now extending it to work for any brand: it drafts a rubric from a brand's documents, with every rule tied to a quote from the source and a person approving it before use.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Claude API</span><span class="proj-tag">LLM-as-Judge</span><span class="proj-tag">Evaluation</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card featured">
+        <div class="proj-meta"><span class="chip live">active</span><span class="proj-type">Master's Thesis · Speech · Edge AI</span></div>
+        <div class="proj-name">Master's Thesis: Speech Recognition at the Point of Care</div>
+        <div class="proj-status live">Active · AI-4-AI Lab, Perelman School of Medicine and Penn Engineering</div>
+        <p class="proj-desc">My master's thesis, in Kevin B. Johnson's lab, which designs and tests AI for ambulatory care. I'm developing real-time speech recognition that runs on an NVIDIA Jetson edge device in the exam room, where audio can't be streamed to a cloud service, with basic agentic decision-making on the live transcript. I work alongside the lab's developers.</p>
+        <!-- TODO(ritika): add model, latency and accuracy results once available -->
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">Speech Recognition</span><span class="proj-tag">Edge AI</span><span class="proj-tag">NVIDIA Jetson</span><span class="proj-tag">Agents</span><span class="proj-tag">Healthcare AI</span></div>
+        </div>
+      </div>
+
+      <a class="proj-card featured" href="https://jobs.iscss.org/" target="_blank" rel="noopener">
+        <div class="proj-meta"><span class="chip live">live</span><span class="proj-type">Web Infrastructure · Community · Live Demo</span></div>
+        <div class="proj-name">ISCSS Jobs Board <span class="proj-live">Live Demo ↗</span></div>
+        <div class="proj-status live">Went live Nov 9, 2026 · CSS Lab, UPenn</div>
+        <p class="proj-desc">Website and deployment for the International Society for Computational Social Science, including the IC2S2 annual conference platform. Built the events page and jobs board from scratch in TypeScript with an AI-assisted workflow, and manage GitHub workflows and Netlify deployments for a global academic audience.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">TypeScript</span><span class="proj-tag">Netlify</span><span class="proj-tag">GitHub</span><span class="proj-tag">UI/UX</span></div>
+          <span class="proj-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="proj-card featured" href="https://partselect-agent-six.vercel.app/" target="_blank" rel="noopener">
+        <div class="proj-meta"><span class="chip live">live</span><span class="proj-type">AI Product · Agents · Tool Use · Live Demo</span></div>
+        <div class="proj-name">PartSelect Parts Assistant <span class="proj-live">Live Demo ↗</span></div>
+        <div class="proj-status">Instalily case study</div>
+        <p class="proj-desc">A Claude tool-use agent for appliance-parts e-commerce, scoped to refrigerators and dishwashers. It diagnoses before it sells: clarifying questions and free checks first, then the likely part with the reason it could be the culprit. Part numbers, prices and compatibility come only from six tools, never from the model's memory, and compatibility returns a clear yes, no or unknown verdict. Order and billing questions go to a human with the order number attached instead of an invented status. React front end with product cards and a cart, FastAPI back end, 21 documented test cases.</p>
+        <div class="proj-foot">
+          <div class="proj-tags"><span class="proj-tag">Claude API</span><span class="proj-tag">Tool Use</span><span class="proj-tag">FastAPI</span><span class="proj-tag">React</span><span class="proj-tag">Product Design</span></div>
+          <span class="proj-arrow">↗</span>
+        </div>
+      </a>
 
       <a class="proj-card featured" href="https://genomefirewall-fn6vvubbx9k2lkn6guvdsr.streamlit.app/" target="_blank" rel="noopener">
         <div class="proj-meta"><span class="chip live">live</span><span class="proj-type">AI/ML · Bioinformatics · Live Demo</span></div>
@@ -102,27 +144,6 @@
         </div>
       </a>
 
-      <a class="proj-card featured" href="https://partselect-agent-six.vercel.app/" target="_blank" rel="noopener">
-        <div class="proj-meta"><span class="chip live">live</span><span class="proj-type">AI Product · Agents · Tool Use · Live Demo</span></div>
-        <div class="proj-name">PartSelect Parts Assistant <span class="proj-live">Live Demo ↗</span></div>
-        <div class="proj-status">Instalily case study</div>
-        <p class="proj-desc">A Claude tool-use agent for appliance-parts e-commerce, scoped to refrigerators and dishwashers. It diagnoses before it sells: clarifying questions and free checks first, then the likely part with the reason it could be the culprit. Part numbers, prices and compatibility come only from six tools, never from the model's memory, and compatibility returns a clear yes, no or unknown verdict. Order and billing questions go to a human with the order number attached instead of an invented status. React front end with product cards and a cart, FastAPI back end, 21 documented test cases.</p>
-        <div class="proj-foot">
-          <div class="proj-tags"><span class="proj-tag">Claude API</span><span class="proj-tag">Tool Use</span><span class="proj-tag">FastAPI</span><span class="proj-tag">React</span><span class="proj-tag">Product Design</span></div>
-          <span class="proj-arrow">↗</span>
-        </div>
-      </a>
-
-      <div class="proj-card featured">
-        <div class="proj-meta"><span class="chip live">active</span><span class="proj-type">AI Evaluation · LLM-as-Judge · Research</span></div>
-        <div class="proj-name">Brand Guideline Scoring Harness</div>
-        <div class="proj-status live">Active · Wharton, advised by Prof. Kartik Hosanagar</div>
-        <p class="proj-desc">A Python harness that scores AI-written marketing posts against a company's brand guidelines. Rules that can be counted, like exclamation marks, sentence case and reading level, run as code. Tone and judgment calls go to a Claude judge that has to quote the post as evidence, and code checks the quote is really in the post. When the judge missed a claim the brand forbids, I had code pull out every sentence that could break the rule and added a severity cap so one clear violation limits the score. Now extending it to work for any brand: it drafts a rubric from a brand's documents, with every rule tied to a quote from the source and a person approving it before use.</p>
-        <div class="proj-foot">
-          <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Claude API</span><span class="proj-tag">LLM-as-Judge</span><span class="proj-tag">Evaluation</span></div>
-        </div>
-      </div>
-
       <a class="proj-card featured" href="https://siim.org/organization-governance/siim-caimi/siim-honors-top-research-and-ai-innovation-at-caimi26/" target="_blank" rel="noopener">
         <div class="proj-meta"><span class="chip done">presented</span><span class="proj-type">Research · Data Engineering</span></div>
         <div class="proj-name">Histology Image Compression</div>
@@ -130,17 +151,6 @@
         <p class="proj-desc">Tile-based pipelines for multi-gigapixel whole-slide TIFF images, and a study of who a compression setting is really measured for. Much of a pathology slide is blank background, so an average can hide what happens to the tissue. Tissue-aware distributional matching for JPEG 2000 gave a 1.7× storage reduction at JPEG-80-equivalent quality. Presented at SIIM CAIMI26 in Philadelphia, where it won 1st place.</p>
         <div class="proj-foot">
           <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Pipelines</span><span class="proj-tag">Medical Imaging</span><span class="proj-tag">JPEG 2000</span></div>
-          <span class="proj-arrow">↗</span>
-        </div>
-      </a>
-
-      <a class="proj-card featured" href="https://jobs.iscss.org/" target="_blank" rel="noopener">
-        <div class="proj-meta"><span class="chip live">live</span><span class="proj-type">Web Infrastructure · Community · Live Demo</span></div>
-        <div class="proj-name">ISCSS Jobs Board <span class="proj-live">Live Demo ↗</span></div>
-        <div class="proj-status live">Went live Nov 9, 2026 · CSS Lab, UPenn</div>
-        <p class="proj-desc">Website and deployment for the International Society for Computational Social Science, including the IC2S2 annual conference platform. Built the events page and jobs board from scratch in TypeScript with an AI-assisted workflow, and manage GitHub workflows and Netlify deployments for a global academic audience.</p>
-        <div class="proj-foot">
-          <div class="proj-tags"><span class="proj-tag">TypeScript</span><span class="proj-tag">Netlify</span><span class="proj-tag">GitHub</span><span class="proj-tag">UI/UX</span></div>
           <span class="proj-arrow">↗</span>
         </div>
       </a>
@@ -192,7 +202,6 @@
           </div>
         </div>
       </a>
-
     </div>
   </div>
 </div>
